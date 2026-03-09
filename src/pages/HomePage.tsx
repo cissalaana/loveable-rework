@@ -210,7 +210,7 @@ const HomePage = () => {
               </button>
             </div>
           </div>
-          <div className="reveal reveal-d2" style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
+          <div className="reveal reveal-d2" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 16 }}>
             {[
               { n: "4+", l: "Anos de experiência" },
               { n: "30+", l: "Projetos entregues" },
@@ -218,9 +218,8 @@ const HomePage = () => {
               { n: "98%", l: "Clientes satisfeitos" },
             ].map(({ n, l }) => (
               <div key={l} style={{
-                padding: "28px 32px", background: "rgba(250,245,240,0.05)",
+                padding: "24px 20px", background: "rgba(250,245,240,0.05)",
                 border: "1px solid rgba(250,245,240,0.1)", borderRadius: 10, textAlign: "center",
-                minWidth: 130,
               }}>
                 <p className="font-display text-[2.4rem] font-semibold text-background mb-[6px]">{n}</p>
                 <p className="font-body text-[0.72rem] font-normal tracking-wider" style={{ color: "rgba(250,245,240,0.45)" }}>{l}</p>

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const Footer = () => (
-  <footer className="bg-foreground" style={{ padding: "40px 48px" }}>
+  <footer className="bg-foreground" style={{ padding: "40px 48px" }} className="bg-foreground nav-pad" style={{ padding: "40px 48px" }}>
     <div className="footer-inner" style={{
       display: "flex", alignItems: "center",
       justifyContent: "space-between", gap: 16, flexWrap: "wrap",
