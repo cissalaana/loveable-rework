@@ -40,8 +40,8 @@ const ContactPage = () => {
   });
 
   const contactLinks = [
-    { icon: "✉️", label: "Email", value: "ana@email.com", href: "mailto:ana@email.com" },
-    { icon: "💼", label: "LinkedIn", value: "linkedin.com/in/analeticia", href: "https://linkedin.com" },
+    { icon: "✉️", label: "Email", value: "anacavalcanti.figueiredo@gmail.com", href: "mailto:anacavalcanti.figueiredo@gmail.com" },
+    { icon: "💼", label: "LinkedIn", value: "https://www.linkedin.com/in/ana-leticia-cavalcanti/", href: "https://www.linkedin.com/in/ana-leticia-cavalcanti/" },
     { icon: "🎨", label: "Behance", value: "behance.net/analeticia", href: "https://behance.net" },
     { icon: "🐦", label: "Twitter", value: "@analeticia_ux", href: "https://twitter.com" },
   ];

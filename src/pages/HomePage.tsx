@@ -212,9 +212,9 @@ const HomePage = () => {
           </div>
           <div className="reveal reveal-d2" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 16 }}>
             {[
-              { n: "4+", l: "Anos de experiência" },
-              { n: "30+", l: "Projetos entregues" },
-              { n: "12", l: "Prêmios de design" },
+              { n: "3+", l: "Anos de experiência" },
+              { n: "10+", l: "Projetos entregues" },
+              { n: "+6", l: "Cursos" },
               { n: "98%", l: "Clientes satisfeitos" },
             ].map(({ n, l }) => (
               <div key={l} style={{
