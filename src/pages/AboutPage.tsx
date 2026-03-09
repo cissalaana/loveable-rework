@@ -2,15 +2,17 @@ import { Link } from "react-router-dom";
 import { useReveal } from "@/hooks/useReveal";
 import PageHeader from "@/components/PageHeader";
 
+import anaPhoto from "@/assets/ana-photo.png";
+
 const AboutPage = () => {
   useReveal();
 
   const timeline = [
-    { year: "2024", title: "Lead Product Designer — Healthtech", desc: "Liderança de design em startup de saúde com 200k+ usuários. Criei o design system e os principais fluxos do produto." },
-    { year: "2023", title: "UX Designer — EdTech Startup", desc: "Responsável pelo redesign completo da plataforma educacional, aumentando retenção em 45%." },
-    { year: "2022", title: "Designer Jr — Agência Digital", desc: "Primeiros anos de experiência em projetos para startups e empresas de médio porte." },
-    { year: "2021", title: "Freelance Designer", desc: "Projetos para ONGs e pequenas empresas com foco em impacto social e acessibilidade." },
-    { year: "2020", title: "Graduação — Design", desc: "Bacharelado em Design com ênfase em UX pela Universidade Federal de Pernambuco." },
+    { year: "2026", title: "Product Designer — CITi (Empresa Júnior)", desc: "Pesquisas qualitativas e quantitativas, sprints semanais, wireframes, protótipos de alta fidelidade e Design System." },
+    { year: "2025", title: "Estagiária de Pesquisa — UFPE", desc: "Pesquisa sobre usabilidade, análise de normas ABNT, ergonomia e organização de documentação de projeto." },
+    { year: "2025", title: "Designer — Alimentacast (Extensão)", desc: "Soluções visuais alinhadas com o público, desenvolvimento de peças no Figma e identidade visual consistente." },
+    { year: "2024", title: "Monitoria Design de Jogos — UFPE", desc: "Orientação em testes de usabilidade, avaliação de relatórios e organização de oportunidades de ensino." },
+    { year: "2023", title: "Graduação — Design (UFPE)", desc: "Bacharelado em Design pela Universidade Federal de Pernambuco (2023–2027)." },
   ];
 
   const values = [
@@ -23,10 +25,10 @@ const AboutPage = () => {
   ];
 
   const skills = [
-    { cat: "Design Tools", items: ["Figma", "Framer", "Adobe XD", "Illustrator", "Principle", "Protopie"] },
-    { cat: "UX Methods", items: ["User Research", "Wireframing", "Prototyping", "Usability Testing", "Information Architecture", "A/B Testing"] },
-    { cat: "Soft Skills", items: ["Facilitação", "Storytelling", "Design Critique", "Workshop Design", "Comunicação com Stakeholders", "Documentação"] },
-    { cat: "Dev Awareness", items: ["HTML/CSS básico", "React (consumo)", "Design Tokens", "Storybook", "Handoff para devs", "Git básico"] },
+    { cat: "Design Tools", items: ["Figma", "Adobe XD", "Protopie", "Illustrator"] },
+    { cat: "UX Methods", items: ["User Research", "Wireframing", "Prototyping", "Usability Testing", "Information Architecture", "Design Thinking"] },
+    { cat: "Soft Skills", items: ["Facilitação", "Storytelling", "Design Critique", "Comunicação com Stakeholders", "Documentação", "Colaboração Multidisciplinar"] },
+    { cat: "Dev Awareness", items: ["HTML/CSS básico", "Figma Handoff", "Design Tokens", "Design System", "Ergonomia Digital", "Heurísticas de Nielsen"] },
   ];
 
   return (
