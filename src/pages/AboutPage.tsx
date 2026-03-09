@@ -37,6 +37,8 @@ const AboutPage = () => {
         label="Sobre Mim"
         title="Oi, eu sou a"
         accent="Ana Letícia!"
+        subtitle="Product Designer buscando criar experiências humanas, acessíveis e orientadas por dados — com foco em UX/UI, pesquisa com usuários e prototipação."
+      />
         subtitle="Product Designer apaixonada por criar experiências humanas, acessíveis e orientadas por dados — com impacto social mensurável."
       />
 
