@@ -63,9 +63,9 @@ const AboutPage = () => {
               <em className="text-rose">resultado com dados</em>
             </h2>
             {[
-              "Sou Product Designer com mais de 4 anos de experiência criando experiências digitais que equilibram estética, usabilidade e impacto real.",
-              "Acredito que o melhor design nasce da interseção entre empatia profunda com o usuário e tomada de decisão baseada em dados. Por isso, faço questão de estar presente desde as primeiras entrevistas até o handoff final.",
-              "Atualmente focada em projetos de saúde, educação e impacto social — acredito que tecnologia tem o poder de democratizar acesso e mudar vidas.",
+              "Sou estudante de Design na UFPE e Product Designer na CITi (empresa júnior), com experiência em pesquisa com usuários, prototipação e criação de Design Systems.",
+              "Acredito que o melhor design nasce da interseção entre empatia profunda com o usuário e tomada de decisão baseada em dados. Tenho experiência com pesquisas qualitativas e quantitativas, wireframes e protótipos de alta fidelidade.",
+              "Coautora do livro 'Entrelinhas: O Enigma dos Valores' e idealizadora de app para segurança feminina no campus integrando IoT — acredito que tecnologia tem o poder de democratizar acesso e mudar vidas.",
             ].map((text, i) => (
               <p key={i} className={`reveal reveal-d${i + 2} font-body text-[0.95rem] text-muted-foreground leading-[1.85] font-light mb-4`}>
                 {text}
