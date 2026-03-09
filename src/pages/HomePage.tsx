@@ -105,7 +105,7 @@ const HomePage = () => {
           </div>
 
           <div style={fade(0.14)}>
-            <div style={{
+            <div className="hero-box" style={{
               border: "1.5px solid rgba(44,24,16,0.1)", borderRadius: 12,
               padding: "44px 52px", position: "relative",
               background: "rgba(255,255,255,0.45)", backdropFilter: "blur(6px)",
