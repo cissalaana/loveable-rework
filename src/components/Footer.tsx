@@ -10,7 +10,7 @@ const Footer = () => (
         Ana Letícia ✦
       </Link>
       <p className="font-body text-[0.78rem] font-light" style={{ color: "rgba(250,245,240,0.3)" }}>
-        © 2025 — Feito com ♡ e muito café
+        © 2025 — Feito com ♡ e muito brownie
       </p>
       <div style={{ display: "flex", gap: 24 }}>
         {["LinkedIn", "Behance", "Email"].map((l) => (
