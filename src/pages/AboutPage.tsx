@@ -2,15 +2,17 @@ import { Link } from "react-router-dom";
 import { useReveal } from "@/hooks/useReveal";
 import PageHeader from "@/components/PageHeader";
 
+import anaPhoto from "@/assets/ana-photo.png";
+
 const AboutPage = () => {
   useReveal();
 
   const timeline = [
-    { year: "2024", title: "Lead Product Designer — Healthtech", desc: "Liderança de design em startup de saúde com 200k+ usuários. Criei o design system e os principais fluxos do produto." },
-    { year: "2023", title: "UX Designer — EdTech Startup", desc: "Responsável pelo redesign completo da plataforma educacional, aumentando retenção em 45%." },
-    { year: "2022", title: "Designer Jr — Agência Digital", desc: "Primeiros anos de experiência em projetos para startups e empresas de médio porte." },
-    { year: "2021", title: "Freelance Designer", desc: "Projetos para ONGs e pequenas empresas com foco em impacto social e acessibilidade." },
-    { year: "2020", title: "Graduação — Design", desc: "Bacharelado em Design com ênfase em UX pela Universidade Federal de Pernambuco." },
+    { year: "2026", title: "Product Designer — CITi (Empresa Júnior)", desc: "Pesquisas qualitativas e quantitativas, sprints semanais, wireframes, protótipos de alta fidelidade e Design System." },
+    { year: "2025", title: "Estagiária de Pesquisa — UFPE", desc: "Pesquisa sobre usabilidade, análise de normas ABNT, ergonomia e organização de documentação de projeto." },
+    { year: "2025", title: "Designer — Alimentacast (Extensão)", desc: "Soluções visuais alinhadas com o público, desenvolvimento de peças no Figma e identidade visual consistente." },
+    { year: "2024", title: "Monitoria Design de Jogos — UFPE", desc: "Orientação em testes de usabilidade, avaliação de relatórios e organização de oportunidades de ensino." },
+    { year: "2023", title: "Graduação — Design (UFPE)", desc: "Bacharelado em Design pela Universidade Federal de Pernambuco (2023–2027)." },
   ];
 
   const values = [
@@ -23,10 +25,10 @@ const AboutPage = () => {
   ];
 
   const skills = [
-    { cat: "Design Tools", items: ["Figma", "Framer", "Adobe XD", "Illustrator", "Principle", "Protopie"] },
-    { cat: "UX Methods", items: ["User Research", "Wireframing", "Prototyping", "Usability Testing", "Information Architecture", "A/B Testing"] },
-    { cat: "Soft Skills", items: ["Facilitação", "Storytelling", "Design Critique", "Workshop Design", "Comunicação com Stakeholders", "Documentação"] },
-    { cat: "Dev Awareness", items: ["HTML/CSS básico", "React (consumo)", "Design Tokens", "Storybook", "Handoff para devs", "Git básico"] },
+    { cat: "Design Tools", items: ["Figma", "Adobe XD", "Protopie", "Illustrator"] },
+    { cat: "UX Methods", items: ["User Research", "Wireframing", "Prototyping", "Usability Testing", "Information Architecture", "Design Thinking"] },
+    { cat: "Soft Skills", items: ["Facilitação", "Storytelling", "Design Critique", "Comunicação com Stakeholders", "Documentação", "Colaboração Multidisciplinar"] },
+    { cat: "Dev Awareness", items: ["HTML/CSS básico", "Figma Handoff", "Design Tokens", "Design System", "Ergonomia Digital", "Heurísticas de Nielsen"] },
   ];
 
   return (
@@ -35,7 +37,7 @@ const AboutPage = () => {
         label="Sobre Mim"
         title="Oi, eu sou a"
         accent="Ana Letícia!"
-        subtitle="Product Designer apaixonada por criar experiências humanas, acessíveis e orientadas por dados — com impacto social mensurável."
+        subtitle="Product Designer buscando criar experiências humanas, acessíveis e orientadas por dados — com foco em UX/UI, pesquisa com usuários e prototipação."
       />
 
       {/* Bio + Photo */}
@@ -44,20 +46,11 @@ const AboutPage = () => {
           <div className="reveal" style={{ position: "relative" }}>
             <div style={{
               width: "100%", aspectRatio: "4/5", borderRadius: 16,
-              background: "linear-gradient(135deg, #EBA5A5 0%, #FABB92 50%, #FFCA8C 100%)",
-              display: "flex", alignItems: "center", justifyContent: "center",
-              position: "relative", overflow: "hidden",
+              overflow: "hidden", position: "relative",
             }}>
-              <div style={{ position: "absolute", inset: 0, backgroundImage: `radial-gradient(circle at 30% 70%, rgba(255,255,255,0.25) 0%, transparent 50%)` }}/>
-              <div style={{
-                border: "2px dashed rgba(255,255,255,0.4)", borderRadius: 10,
-                padding: "24px 32px", textAlign: "center", position: "relative", zIndex: 1,
-              }}>
-                <span style={{ fontSize: "3rem", display: "block", marginBottom: 12 }}>🌸</span>
-                <span className="font-body text-[0.72rem] font-medium tracking-[0.1em] uppercase" style={{ color: "rgba(255,255,255,0.7)" }}>
-                  Sua foto aqui
-                </span>
-              </div>
+              <img src={anaPhoto} alt="Ana Letícia Cavalcanti Figueiredo" style={{
+                width: "100%", height: "100%", objectFit: "cover",
+              }} />
             </div>
             <div style={{ position: "absolute", bottom: -20, right: -20, width: 80, height: 80, borderRadius: 10, background: "#FFCA8C", zIndex: -1 }}/>
             <div style={{ position: "absolute", top: -16, left: -16, width: 48, height: 48, borderRadius: "50%", background: "rgba(164,189,168,0.4)", zIndex: -1 }}/>
@@ -70,9 +63,9 @@ const AboutPage = () => {
               <em className="text-rose">resultado com dados</em>
             </h2>
             {[
-              "Sou Product Designer com mais de 4 anos de experiência criando experiências digitais que equilibram estética, usabilidade e impacto real.",
-              "Acredito que o melhor design nasce da interseção entre empatia profunda com o usuário e tomada de decisão baseada em dados. Por isso, faço questão de estar presente desde as primeiras entrevistas até o handoff final.",
-              "Atualmente focada em projetos de saúde, educação e impacto social — acredito que tecnologia tem o poder de democratizar acesso e mudar vidas.",
+              "Sou estudante de Design na UFPE e Product Designer na CITi (empresa júnior), com experiência em pesquisa com usuários, prototipação e criação de Design Systems.",
+              "Acredito que o melhor design nasce da interseção entre empatia profunda com o usuário e tomada de decisão baseada em dados. Tenho experiência com pesquisas qualitativas e quantitativas, wireframes e protótipos de alta fidelidade.",
+              "Coautora do livro 'Entrelinhas: O Enigma dos Valores' e idealizadora de app para segurança feminina no campus integrando IoT — acredito que tecnologia tem o poder de democratizar acesso e mudar vidas.",
             ].map((text, i) => (
               <p key={i} className={`reveal reveal-d${i + 2} font-body text-[0.95rem] text-muted-foreground leading-[1.85] font-light mb-4`}>
                 {text}
