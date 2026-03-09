@@ -6,7 +6,7 @@ interface PageHeaderProps {
 }
 
 const PageHeader = ({ label, title, accent, subtitle }: PageHeaderProps) => (
-  <section className="bg-background relative overflow-hidden" style={{
+  <section className="bg-background relative overflow-hidden section-pad" style={{
     padding: "160px 48px 80px",
     borderBottom: "1px solid rgba(44,24,16,0.06)",
   }}>

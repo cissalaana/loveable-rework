@@ -162,7 +162,7 @@ const CaseStudyPage = () => {
           <h2 className="reveal reveal-d1 font-display font-semibold text-foreground mb-12" style={{ fontSize: "clamp(1.8rem,3.5vw,2.8rem)" }}>
             Telas & Mockups
           </h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gridTemplateRows: "auto auto", gap: 16 }}>
+          <div className="gallery-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gridTemplateRows: "auto auto", gap: 16 }}>
             {project.gallery.map((color, i) => (
               <div key={i} className="gallery-item reveal" style={{
                 height: i === 0 ? 320 : i === 3 ? 320 : 200,
