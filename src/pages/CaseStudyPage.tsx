@@ -128,6 +128,48 @@ const CaseStudyPage = () => {
         </div>
       </section>
 
+      {/* Stakeholders & Metodologias */}
+      <section className="section-pad bg-background" style={{ padding: "96px 48px" }}>
+        <div style={{ maxWidth: 1000, margin: "0 auto" }}>
+          <div className="cs-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48 }}>
+            <div>
+              <p className="reveal font-body text-[0.72rem] font-medium text-rose tracking-[0.2em] uppercase mb-6">
+                Stakeholders Envolvidos
+              </p>
+              <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+                {project.stakeholders.map((s, i) => (
+                  <div key={s} className={`reveal reveal-d${i + 1}`} style={{
+                    display: "flex", alignItems: "center", gap: 14,
+                    padding: "16px 20px", background: "#fff",
+                    border: "1px solid rgba(44,24,16,0.07)", borderRadius: 8,
+                  }}>
+                    <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#EBA5A5", flexShrink: 0 }}/>
+                    <span className="font-body text-[0.88rem] font-normal" style={{ color: "#5A4A44" }}>{s}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <p className="reveal font-body text-[0.72rem] font-medium text-meadow tracking-[0.2em] uppercase mb-6">
+                Metodologias Aplicadas
+              </p>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
+                {project.methodologies.map((m, i) => (
+                  <span key={m} className={`reveal reveal-d${(i % 4) + 1}`} style={{
+                    padding: "10px 20px",
+                    border: "1.5px solid rgba(164,189,168,0.4)",
+                    borderRadius: 50, fontSize: "0.82rem",
+                    fontWeight: 500, color: "#6A9470",
+                    background: "rgba(164,189,168,0.08)",
+                  }}>{m}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Processo */}
       <section className="section-pad bg-background" style={{ padding: "96px 48px" }}>
         <div style={{ maxWidth: 1000, margin: "0 auto" }}>
@@ -185,47 +227,7 @@ const CaseStudyPage = () => {
         </div>
       </section>
 
-      {/* Stakeholders & Metodologias */}
-      <section className="section-pad bg-background" style={{ padding: "96px 48px" }}>
-        <div style={{ maxWidth: 1000, margin: "0 auto" }}>
-          <div className="cs-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48 }}>
-            <div>
-              <p className="reveal font-body text-[0.72rem] font-medium text-rose tracking-[0.2em] uppercase mb-6">
-                Stakeholders Envolvidos
-              </p>
-              <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-                {project.stakeholders.map((s, i) => (
-                  <div key={s} className={`reveal reveal-d${i + 1}`} style={{
-                    display: "flex", alignItems: "center", gap: 14,
-                    padding: "16px 20px", background: "#fff",
-                    border: "1px solid rgba(44,24,16,0.07)", borderRadius: 8,
-                  }}>
-                    <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#EBA5A5", flexShrink: 0 }}/>
-                    <span className="font-body text-[0.88rem] font-normal" style={{ color: "#5A4A44" }}>{s}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <p className="reveal font-body text-[0.72rem] font-medium text-meadow tracking-[0.2em] uppercase mb-6">
-                Metodologias Aplicadas
-              </p>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
-                {project.methodologies.map((m, i) => (
-                  <span key={m} className={`reveal reveal-d${(i % 4) + 1}`} style={{
-                    padding: "10px 20px",
-                    border: "1.5px solid rgba(164,189,168,0.4)",
-                    borderRadius: 50, fontSize: "0.82rem",
-                    fontWeight: 500, color: "#6A9470",
-                    background: "rgba(164,189,168,0.08)",
-                  }}>{m}</span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* Próximo projeto */}
       <section className="bg-foreground relative overflow-hidden" style={{ padding: "80px 48px" }}>
