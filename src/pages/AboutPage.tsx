@@ -46,20 +46,11 @@ const AboutPage = () => {
           <div className="reveal" style={{ position: "relative" }}>
             <div style={{
               width: "100%", aspectRatio: "4/5", borderRadius: 16,
-              background: "linear-gradient(135deg, #EBA5A5 0%, #FABB92 50%, #FFCA8C 100%)",
-              display: "flex", alignItems: "center", justifyContent: "center",
-              position: "relative", overflow: "hidden",
+              overflow: "hidden", position: "relative",
             }}>
-              <div style={{ position: "absolute", inset: 0, backgroundImage: `radial-gradient(circle at 30% 70%, rgba(255,255,255,0.25) 0%, transparent 50%)` }}/>
-              <div style={{
-                border: "2px dashed rgba(255,255,255,0.4)", borderRadius: 10,
-                padding: "24px 32px", textAlign: "center", position: "relative", zIndex: 1,
-              }}>
-                <span style={{ fontSize: "3rem", display: "block", marginBottom: 12 }}>🌸</span>
-                <span className="font-body text-[0.72rem] font-medium tracking-[0.1em] uppercase" style={{ color: "rgba(255,255,255,0.7)" }}>
-                  Sua foto aqui
-                </span>
-              </div>
+              <img src={anaPhoto} alt="Ana Letícia Cavalcanti Figueiredo" style={{
+                width: "100%", height: "100%", objectFit: "cover",
+              }} />
             </div>
             <div style={{ position: "absolute", bottom: -20, right: -20, width: 80, height: 80, borderRadius: 10, background: "#FFCA8C", zIndex: -1 }}/>
             <div style={{ position: "absolute", top: -16, left: -16, width: 48, height: 48, borderRadius: "50%", background: "rgba(164,189,168,0.4)", zIndex: -1 }}/>
