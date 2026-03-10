@@ -34,50 +34,62 @@ const CaseStudyPage = () => {
   return (
     <div className="page-enter">
       {/* Hero */}
-      <section style={{ padding: "160px 48px 80px", background: project.color, position: "relative", overflow: "hidden" }}>
-        <div style={{ position: "absolute", inset: 0, backgroundImage: `radial-gradient(circle at 10% 90%, rgba(255,255,255,0.22) 0%, transparent 50%), radial-gradient(circle at 90% 10%, rgba(255,255,255,0.14) 0%, transparent 50%)`, pointerEvents: "none" }}/>
-        <span className="float-a" style={{ position: "absolute", top: "25%", right: "10%", color: "rgba(255,255,255,0.5)", fontSize: 28, pointerEvents: "none" }}>✦</span>
-        <span className="float-b" style={{ position: "absolute", bottom: "25%", left: "8%", color: "rgba(255,255,255,0.35)", fontSize: 16, pointerEvents: "none" }}>★</span>
+      {(() => {
+        const dark = isDarkColor(project.color);
+        const textPrimary = dark ? "#FAF5F0" : "rgba(44,24,16,1)";
+        const textSecondary = dark ? "rgba(250,245,240,0.6)" : "rgba(44,24,16,0.6)";
+        const textTertiary = dark ? "rgba(250,245,240,0.8)" : "rgba(44,24,16,0.8)";
+        const textSub = dark ? "rgba(250,245,240,0.7)" : "rgba(44,24,16,0.7)";
+        const pillBg = dark ? "rgba(255,255,255,0.12)" : "rgba(255,255,255,0.35)";
+        const pillLabel = dark ? "rgba(250,245,240,0.5)" : "rgba(44,24,16,0.5)";
 
-        <div style={{ maxWidth: 900, margin: "0 auto", position: "relative", zIndex: 1 }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 32 }}>
-            <button onClick={() => navigate("/projetos")} className="font-body text-[0.78rem] font-medium tracking-wider" style={{ background: "none", border: "none", padding: 0, color: "rgba(44,24,16,0.6)" }}>
-              Projetos
-            </button>
-            <span style={{ color: "rgba(44,24,16,0.4)" }}>→</span>
-            <span className="font-body text-[0.78rem] font-medium" style={{ color: "rgba(44,24,16,0.8)" }}>
-              {project.title}
-            </span>
-          </div>
+        return (
+          <section style={{ padding: "160px 48px 80px", background: project.color, position: "relative", overflow: "hidden" }}>
+            <div style={{ position: "absolute", inset: 0, backgroundImage: `radial-gradient(circle at 10% 90%, rgba(255,255,255,0.22) 0%, transparent 50%), radial-gradient(circle at 90% 10%, rgba(255,255,255,0.14) 0%, transparent 50%)`, pointerEvents: "none" }}/>
+            <span className="float-a" style={{ position: "absolute", top: "25%", right: "10%", color: "rgba(255,255,255,0.5)", fontSize: 28, pointerEvents: "none" }}>✦</span>
+            <span className="float-b" style={{ position: "absolute", bottom: "25%", left: "8%", color: "rgba(255,255,255,0.35)", fontSize: 16, pointerEvents: "none" }}>★</span>
 
-          <span style={{ fontSize: "3rem", display: "block", marginBottom: 24 }}>{project.emoji}</span>
-          <h1 className="font-display font-semibold tracking-tight text-foreground leading-[1.05]" style={{ fontSize: "clamp(2.4rem,5.5vw,4.5rem)", marginBottom: 20 }}>
-            {project.title}
-          </h1>
-          <p className="font-body text-[1.1rem] font-light leading-[1.7]" style={{ color: "rgba(44,24,16,0.7)", maxWidth: 580 }}>
-            {project.subtitle}
-          </p>
-
-          <div style={{ display: "flex", gap: 12, marginTop: 40, flexWrap: "wrap" }}>
-            {[
-              { l: "Categoria", v: project.category },
-              { l: "Ano", v: project.year },
-              { l: "Papel", v: project.role },
-              { l: "Duração", v: project.duration },
-              { l: "Equipe", v: project.team },
-            ].map(({ l, v }) => (
-              <div key={l} style={{
-                padding: "12px 22px",
-                background: "rgba(255,255,255,0.35)", backdropFilter: "blur(8px)",
-                borderRadius: 50, display: "flex", flexDirection: "column", gap: 2,
-              }}>
-                <span className="font-body text-[0.62rem] font-semibold tracking-[0.12em] uppercase" style={{ color: "rgba(44,24,16,0.5)" }}>{l}</span>
-                <span className="font-body text-[0.85rem] font-medium text-foreground">{v}</span>
+            <div style={{ maxWidth: 900, margin: "0 auto", position: "relative", zIndex: 1 }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 32 }}>
+                <button onClick={() => navigate("/projetos")} className="font-body text-[0.78rem] font-medium tracking-wider" style={{ background: "none", border: "none", padding: 0, color: textSecondary, cursor: "pointer" }}>
+                  Projetos
+                </button>
+                <span style={{ color: textSecondary }}>→</span>
+                <span className="font-body text-[0.78rem] font-medium" style={{ color: textTertiary }}>
+                  {project.title}
+                </span>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
+
+              <span style={{ fontSize: "3rem", display: "block", marginBottom: 24 }}>{project.emoji}</span>
+              <h1 className="font-display font-semibold tracking-tight leading-[1.05]" style={{ fontSize: "clamp(2.4rem,5.5vw,4.5rem)", marginBottom: 20, color: textPrimary }}>
+                {project.title}
+              </h1>
+              <p className="font-body text-[1.1rem] font-light leading-[1.7]" style={{ color: textSub, maxWidth: 580 }}>
+                {project.subtitle}
+              </p>
+
+              <div style={{ display: "flex", gap: 12, marginTop: 40, flexWrap: "wrap" }}>
+                {[
+                  { l: "Categoria", v: project.category },
+                  { l: "Ano", v: project.year },
+                  { l: "Papel", v: project.role },
+                  { l: "Duração", v: project.duration },
+                  { l: "Equipe", v: project.team },
+                ].map(({ l, v }) => (
+                  <div key={l} style={{
+                    padding: "12px 22px",
+                    background: pillBg, backdropFilter: "blur(8px)",
+                    borderRadius: 50, display: "flex", flexDirection: "column", gap: 2,
+                  }}>
+                    <span className="font-body text-[0.62rem] font-semibold tracking-[0.12em] uppercase" style={{ color: pillLabel }}>{l}</span>
+                    <span className="font-body text-[0.85rem] font-medium" style={{ color: textPrimary }}>{v}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        );
+      })()}
 
       {/* Overview */}
       <section className="section-pad bg-background" style={{ padding: "96px 48px" }}>
