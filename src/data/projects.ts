@@ -32,6 +32,11 @@ export interface Project {
   stakeholders: string[];
   methodologies: string[];
   gallery: string[];
+  research?: string;
+  researchInsights?: { title: string; detail: string }[];
+  personas?: { name: string; age: string; role: string; desc: string }[];
+  designPrinciples?: { title: string; desc: string }[];
+  learnings?: string[];
 }
 
 export const PROJECTS: Project[] = [
