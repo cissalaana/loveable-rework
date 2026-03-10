@@ -249,6 +249,30 @@ export const PROJECTS: Project[] = [
     stakeholders: ["ONG Parceiras (12)", "Coordenadores de Voluntariado", "Time de Produto", "Investidores de Impacto", "Voluntários Beta"],
     methodologies: ["Research Qualitativo", "Funil de Conversão", "Testes A/B", "Gamification Design", "Behavioral Design", "Growth Design"],
     gallery: ["#C7C19D", "#A4BDA8", "#FFCA8C", "#FAF5F0", "#C7C19D", "#A4BDA8"],
+    research: "Conduzimos 30 entrevistas em profundidade com três perfis de voluntários: ativos (participam regularmente), inativos (se cadastraram mas pararam) e nunca-ativados (se cadastraram e nunca realizaram nenhuma ação). Complementamos com análise de funil usando Hotjar e Google Analytics para identificar onde exatamente o abandono acontecia.",
+    researchInsights: [
+      { title: "78% de abandono na escolha", detail: "O step de escolha de causa concentrava a maior taxa de abandono — excesso de opções e falta de orientação travavam os usuários." },
+      { title: "Barreira do tempo", detail: "A maioria dos inativos não parou por falta de vontade, mas por perceber que as oportunidades exigiam mais tempo do que tinham." },
+      { title: "Falta de feedback", detail: "Voluntários ativos relataram que nunca recebiam retorno sobre o impacto de suas ações, reduzindo a motivação para continuar." },
+      { title: "Confiança como fator", detail: "Muitos nunca-ativados não confiavam nas ONGs listadas — faltavam avaliações, depoimentos e transparência sobre como as doações eram usadas." },
+    ],
+    personas: [
+      { name: "Beatriz", age: "26 anos", role: "Persona Principal", desc: "Profissional de marketing com pouco tempo livre. Quer fazer voluntariado mas se sente sobrecarregada pelas opções e não sabe por onde começar." },
+      { name: "Renato", age: "34 anos", role: "Voluntário inativo", desc: "Se cadastrou com entusiasmo mas nunca encontrou uma causa que combinasse com suas habilidades e disponibilidade." },
+      { name: "Coordenadora Vera", age: "48 anos", role: "ONG parceira", desc: "Precisa de voluntários comprometidos e recorrentes, não de cadastros que nunca se convertem em ação." },
+    ],
+    designPrinciples: [
+      { title: "Match inteligente", desc: "Algoritmo de compatibilidade conecta voluntários a causas com base em habilidades, localização e disponibilidade de horário." },
+      { title: "Momentum", desc: "Micro-interações e progresso gamificado mantêm o engajamento — cada pequena ação é celebrada e visível." },
+      { title: "Confiança progressiva", desc: "Avaliações, depoimentos e métricas de impacto constroem confiança gradualmente, sem exigir um leap of faith inicial." },
+      { title: "Lembretes contextuais", desc: "Notificações baseadas na disponibilidade declarada do usuário, não em horários arbitrários." },
+    ],
+    learnings: [
+      "O gap entre intenção e ação é um problema de design, não de motivação — as pessoas querem ajudar, mas a fricção é grande demais.",
+      "Gamification funciona quando reforça motivadores intrínsecos (propósito, progresso, pertencimento), não quando é superficial.",
+      "Roll-out gradual (20% → 50% → 100%) permitiu identificar e corrigir problemas antes de impactar toda a base.",
+      "Testes de conceito com protótipos rápidos economizaram semanas de desenvolvimento ao validar a direção antes de investir em código.",
+    ],
   },
 {
   id: "novo-projeto",
