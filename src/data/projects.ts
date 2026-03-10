@@ -133,6 +133,30 @@ export const PROJECTS: Project[] = [
     stakeholders: ["Secretaria de Educação", "Diretores de Escola", "Coordenadores Pedagógicos", "Time de Engenharia", "Especialistas em Dados"],
     methodologies: ["Service Design", "Data Visualization (D3.js)", "Card Sorting", "Shadowing", "Design Inclusivo", "Testes A/B"],
     gallery: ["#A4BDA8", "#C7C19D", "#FFCA8C", "#FAF5F0", "#A4BDA8", "#C7C19D"],
+    research: "Realizamos um shadowing de 2 semanas acompanhando 8 gestores escolares em seu ambiente de trabalho. Observamos como tomavam decisões, quais ferramentas usavam e onde estavam os maiores gargalos. Complementamos com entrevistas semiestruturadas para entender frustrações, necessidades e expectativas em relação a visualização de dados educacionais.",
+    researchInsights: [
+      { title: "Planilhas como padrão", detail: "100% dos gestores usavam planilhas manuais como principal ferramenta de análise — gerando atrasos e erros frequentes." },
+      { title: "Decisões reativas", detail: "A maioria das intervenções pedagógicas acontecia tarde demais porque os dados não eram acessíveis em tempo real." },
+      { title: "Letramento digital variado", detail: "O nível de familiaridade com tecnologia variava enormemente entre gestores, exigindo uma interface progressiva." },
+      { title: "Dados dispersos", detail: "Informações estavam espalhadas em 4+ sistemas diferentes, dificultando uma visão unificada." },
+    ],
+    personas: [
+      { name: "Dona Marta", age: "54 anos", role: "Persona Principal", desc: "Diretora de escola pública há 12 anos. Usa planilhas básicas e precisa de visualizações claras para tomar decisões rápidas sobre alocação de recursos." },
+      { name: "Prof. Ricardo", age: "38 anos", role: "Coordenador Pedagógico", desc: "Precisa acompanhar indicadores de desempenho dos alunos para planejar intervenções pedagógicas no tempo certo." },
+      { name: "Ana Paula", age: "29 anos", role: "Analista da Secretaria", desc: "Consolida dados de múltiplas escolas e precisa gerar relatórios comparativos para tomada de decisão na gestão pública." },
+    ],
+    designPrinciples: [
+      { title: "Progressividade", desc: "A interface revela complexidade gradualmente — do resumo executivo aos dados granulares, sem sobrecarregar o usuário." },
+      { title: "Acessibilidade", desc: "Alto contraste, modo daltônico e tipografia ampliada garantem uso por gestores com diferentes necessidades visuais." },
+      { title: "Ação imediata", desc: "Alertas automáticos para indicadores críticos reduzem o tempo entre identificar um problema e agir sobre ele." },
+      { title: "Exportabilidade", desc: "Relatórios podem ser gerados e exportados em um clique, eliminando o retrabalho manual com planilhas." },
+    ],
+    learnings: [
+      "Shadowing revelou comportamentos que entrevistas sozinhas nunca teriam capturado — como a forma que gestores improvisavam soluções no dia a dia.",
+      "Testes A/B com gestores reais mostraram que simplicidade vence sofisticação visual em contextos de baixo letramento digital.",
+      "Design inclusivo não é um extra — é um requisito fundamental quando seu público tem perfis tão diversos.",
+      "Card sorting com usuários reais reorganizou completamente a hierarquia de informação que havíamos planejado inicialmente.",
+    ],
   },
   {
     id: "Redesign Craigslist",
@@ -167,6 +191,30 @@ export const PROJECTS: Project[] = [
     stakeholders: ["CTO e CPO", "Times de Produto (3 times)", "Engenheiros Frontend", "QA e Acessibilidade", "Marketing e Brand"],
     methodologies: ["Atomic Design", "Design Tokens", "Storybook", "Versionamento Semântico", "Design Critique", "RFC Process"],
     gallery: ["#FABB92", "#FFCA8C", "#F5CEC7", "#FAF5F0", "#FABB92", "#FFCA8C"],
+    research: "Realizamos uma auditoria visual completa dos 3 produtos da fintech, catalogando 847 componentes únicos. Entrevistamos designers e engenheiros de cada time para entender como criavam componentes, quais eram as maiores dores de consistência e o que esperavam de um design system centralizado.",
+    researchInsights: [
+      { title: "847 componentes únicos", detail: "Três produtos tinham centenas de variações duplicadas — 42 versões diferentes de botão foram encontradas." },
+      { title: "Retrabalho constante", detail: "Cada time recriava componentes do zero, gastando em média 30% do tempo de design em trabalho repetitivo." },
+      { title: "Inconsistência na UX", detail: "Usuários que navegavam entre produtos percebiam interfaces diferentes para as mesmas ações, gerando confusão." },
+      { title: "Falta de documentação", detail: "Nenhum componente tinha documentação de uso, levando a implementações incorretas pela engenharia." },
+    ],
+    personas: [
+      { name: "Carla", age: "31 anos", role: "Persona Principal", desc: "Product Designer sênior. Precisa de componentes prontos e documentados para focar em problemas de negócio ao invés de reinventar padrões visuais." },
+      { name: "Lucas", age: "27 anos", role: "Engenheiro Frontend", desc: "Implementa as interfaces e precisa de especificações claras, tokens consistentes e componentes reutilizáveis em código." },
+      { name: "Fernanda", age: "35 anos", role: "Head de Produto", desc: "Precisa garantir que a experiência seja consistente entre todos os produtos para fortalecer a marca e reduzir custos." },
+    ],
+    designPrinciples: [
+      { title: "Token-first", desc: "Toda decisão visual começa pelos tokens — cores, tipografia e espaçamento são definidos semanticamente antes de qualquer componente." },
+      { title: "Composabilidade", desc: "Componentes atômicos se combinam em moléculas e organismos, permitindo flexibilidade sem perder consistência." },
+      { title: "Governança aberta", desc: "O processo de RFC permite que qualquer membro do time proponha novos componentes, com critérios claros de aprovação." },
+      { title: "Documentação viva", desc: "Cada componente no Storybook inclui exemplos interativos, variantes, props e guias de quando usar (e quando não usar)." },
+    ],
+    learnings: [
+      "Um design system não é um projeto com fim — é um produto vivo que precisa de manutenção, governança e evolução contínua.",
+      "A adoção depende mais de relacionamento e suporte do que de qualidade técnica. Office hours semanais foram cruciais.",
+      "Começar pelos tokens (não pelos componentes) garantiu que a fundação fosse sólida antes de construir em cima.",
+      "O maior desafio não foi criar o sistema — foi convencer os times a abandonar seus componentes locais e adotar o compartilhado.",
+    ],
   },
   {
     id: "Filtro Aqualis",
@@ -201,6 +249,30 @@ export const PROJECTS: Project[] = [
     stakeholders: ["ONG Parceiras (12)", "Coordenadores de Voluntariado", "Time de Produto", "Investidores de Impacto", "Voluntários Beta"],
     methodologies: ["Research Qualitativo", "Funil de Conversão", "Testes A/B", "Gamification Design", "Behavioral Design", "Growth Design"],
     gallery: ["#C7C19D", "#A4BDA8", "#FFCA8C", "#FAF5F0", "#C7C19D", "#A4BDA8"],
+    research: "Conduzimos 30 entrevistas em profundidade com três perfis de voluntários: ativos (participam regularmente), inativos (se cadastraram mas pararam) e nunca-ativados (se cadastraram e nunca realizaram nenhuma ação). Complementamos com análise de funil usando Hotjar e Google Analytics para identificar onde exatamente o abandono acontecia.",
+    researchInsights: [
+      { title: "78% de abandono na escolha", detail: "O step de escolha de causa concentrava a maior taxa de abandono — excesso de opções e falta de orientação travavam os usuários." },
+      { title: "Barreira do tempo", detail: "A maioria dos inativos não parou por falta de vontade, mas por perceber que as oportunidades exigiam mais tempo do que tinham." },
+      { title: "Falta de feedback", detail: "Voluntários ativos relataram que nunca recebiam retorno sobre o impacto de suas ações, reduzindo a motivação para continuar." },
+      { title: "Confiança como fator", detail: "Muitos nunca-ativados não confiavam nas ONGs listadas — faltavam avaliações, depoimentos e transparência sobre como as doações eram usadas." },
+    ],
+    personas: [
+      { name: "Beatriz", age: "26 anos", role: "Persona Principal", desc: "Profissional de marketing com pouco tempo livre. Quer fazer voluntariado mas se sente sobrecarregada pelas opções e não sabe por onde começar." },
+      { name: "Renato", age: "34 anos", role: "Voluntário inativo", desc: "Se cadastrou com entusiasmo mas nunca encontrou uma causa que combinasse com suas habilidades e disponibilidade." },
+      { name: "Coordenadora Vera", age: "48 anos", role: "ONG parceira", desc: "Precisa de voluntários comprometidos e recorrentes, não de cadastros que nunca se convertem em ação." },
+    ],
+    designPrinciples: [
+      { title: "Match inteligente", desc: "Algoritmo de compatibilidade conecta voluntários a causas com base em habilidades, localização e disponibilidade de horário." },
+      { title: "Momentum", desc: "Micro-interações e progresso gamificado mantêm o engajamento — cada pequena ação é celebrada e visível." },
+      { title: "Confiança progressiva", desc: "Avaliações, depoimentos e métricas de impacto constroem confiança gradualmente, sem exigir um leap of faith inicial." },
+      { title: "Lembretes contextuais", desc: "Notificações baseadas na disponibilidade declarada do usuário, não em horários arbitrários." },
+    ],
+    learnings: [
+      "O gap entre intenção e ação é um problema de design, não de motivação — as pessoas querem ajudar, mas a fricção é grande demais.",
+      "Gamification funciona quando reforça motivadores intrínsecos (propósito, progresso, pertencimento), não quando é superficial.",
+      "Roll-out gradual (20% → 50% → 100%) permitiu identificar e corrigir problemas antes de impactar toda a base.",
+      "Testes de conceito com protótipos rápidos economizaram semanas de desenvolvimento ao validar a direção antes de investir em código.",
+    ],
   },
 {
   id: "novo-projeto",

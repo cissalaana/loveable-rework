@@ -96,6 +96,11 @@ const HomePage = () => {
         <span className="float-b" style={{ position: "absolute", top: "65%", right: "28%", color: "#EBA5A5", fontSize: 14, opacity: 0.6, pointerEvents: "none" }}>★</span>
         <span className="float-a" style={{ position: "absolute", top: "45%", left: "6%", color: "#A4BDA8", fontSize: 9, opacity: 0.5, pointerEvents: "none" }}>●</span>
         <span className="float-b" style={{ position: "absolute", top: "30%", left: "42%", color: "#FABB92", fontSize: 11, opacity: 0.4, pointerEvents: "none" }}>✦</span>
+        <span className="float-a" style={{ position: "absolute", top: "15%", left: "22%", color: "#EBA5A5", fontSize: 18, opacity: 0.55, pointerEvents: "none" }}>🐱</span>
+        <span className="float-b" style={{ position: "absolute", top: "72%", right: "12%", color: "#FFCA8C", fontSize: 16, opacity: 0.5, pointerEvents: "none" }}>😸</span>
+        <span className="float-a" style={{ position: "absolute", top: "55%", left: "35%", color: "#F5CEC7", fontSize: 12, opacity: 0.45, pointerEvents: "none" }}>🐾</span>
+        <span className="float-b" style={{ position: "absolute", top: "38%", right: "8%", color: "#C7C19D", fontSize: 14, opacity: 0.4, pointerEvents: "none" }}>😺</span>
+        <span className="float-a" style={{ position: "absolute", top: "80%", left: "15%", color: "#FABB92", fontSize: 10, opacity: 0.35, pointerEvents: "none" }}>🐱</span>
 
         <div style={{ maxWidth: 920, paddingTop: 88, position: "relative", zIndex: 1 }}>
           <div style={fade(0)}>
