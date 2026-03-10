@@ -133,6 +133,30 @@ export const PROJECTS: Project[] = [
     stakeholders: ["Secretaria de Educação", "Diretores de Escola", "Coordenadores Pedagógicos", "Time de Engenharia", "Especialistas em Dados"],
     methodologies: ["Service Design", "Data Visualization (D3.js)", "Card Sorting", "Shadowing", "Design Inclusivo", "Testes A/B"],
     gallery: ["#A4BDA8", "#C7C19D", "#FFCA8C", "#FAF5F0", "#A4BDA8", "#C7C19D"],
+    research: "Realizamos um shadowing de 2 semanas acompanhando 8 gestores escolares em seu ambiente de trabalho. Observamos como tomavam decisões, quais ferramentas usavam e onde estavam os maiores gargalos. Complementamos com entrevistas semiestruturadas para entender frustrações, necessidades e expectativas em relação a visualização de dados educacionais.",
+    researchInsights: [
+      { title: "Planilhas como padrão", detail: "100% dos gestores usavam planilhas manuais como principal ferramenta de análise — gerando atrasos e erros frequentes." },
+      { title: "Decisões reativas", detail: "A maioria das intervenções pedagógicas acontecia tarde demais porque os dados não eram acessíveis em tempo real." },
+      { title: "Letramento digital variado", detail: "O nível de familiaridade com tecnologia variava enormemente entre gestores, exigindo uma interface progressiva." },
+      { title: "Dados dispersos", detail: "Informações estavam espalhadas em 4+ sistemas diferentes, dificultando uma visão unificada." },
+    ],
+    personas: [
+      { name: "Dona Marta", age: "54 anos", role: "Persona Principal", desc: "Diretora de escola pública há 12 anos. Usa planilhas básicas e precisa de visualizações claras para tomar decisões rápidas sobre alocação de recursos." },
+      { name: "Prof. Ricardo", age: "38 anos", role: "Coordenador Pedagógico", desc: "Precisa acompanhar indicadores de desempenho dos alunos para planejar intervenções pedagógicas no tempo certo." },
+      { name: "Ana Paula", age: "29 anos", role: "Analista da Secretaria", desc: "Consolida dados de múltiplas escolas e precisa gerar relatórios comparativos para tomada de decisão na gestão pública." },
+    ],
+    designPrinciples: [
+      { title: "Progressividade", desc: "A interface revela complexidade gradualmente — do resumo executivo aos dados granulares, sem sobrecarregar o usuário." },
+      { title: "Acessibilidade", desc: "Alto contraste, modo daltônico e tipografia ampliada garantem uso por gestores com diferentes necessidades visuais." },
+      { title: "Ação imediata", desc: "Alertas automáticos para indicadores críticos reduzem o tempo entre identificar um problema e agir sobre ele." },
+      { title: "Exportabilidade", desc: "Relatórios podem ser gerados e exportados em um clique, eliminando o retrabalho manual com planilhas." },
+    ],
+    learnings: [
+      "Shadowing revelou comportamentos que entrevistas sozinhas nunca teriam capturado — como a forma que gestores improvisavam soluções no dia a dia.",
+      "Testes A/B com gestores reais mostraram que simplicidade vence sofisticação visual em contextos de baixo letramento digital.",
+      "Design inclusivo não é um extra — é um requisito fundamental quando seu público tem perfis tão diversos.",
+      "Card sorting com usuários reais reorganizou completamente a hierarquia de informação que havíamos planejado inicialmente.",
+    ],
   },
   {
     id: "Redesign Craigslist",
