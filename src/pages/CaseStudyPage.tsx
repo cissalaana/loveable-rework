@@ -2,6 +2,15 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useReveal } from "@/hooks/useReveal";
 import { PROJECTS } from "@/data/projects";
 
+// Returns true if a hex color is dark
+const isDarkColor = (hex: string) => {
+  const c = hex.replace("#", "");
+  const r = parseInt(c.substring(0, 2), 16);
+  const g = parseInt(c.substring(2, 4), 16);
+  const b = parseInt(c.substring(4, 6), 16);
+  return (r * 299 + g * 587 + b * 114) / 1000 < 128;
+};
+
 const CaseStudyPage = () => {
   useReveal();
   const { id } = useParams();
