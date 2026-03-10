@@ -191,6 +191,30 @@ export const PROJECTS: Project[] = [
     stakeholders: ["CTO e CPO", "Times de Produto (3 times)", "Engenheiros Frontend", "QA e Acessibilidade", "Marketing e Brand"],
     methodologies: ["Atomic Design", "Design Tokens", "Storybook", "Versionamento Semântico", "Design Critique", "RFC Process"],
     gallery: ["#FABB92", "#FFCA8C", "#F5CEC7", "#FAF5F0", "#FABB92", "#FFCA8C"],
+    research: "Realizamos uma auditoria visual completa dos 3 produtos da fintech, catalogando 847 componentes únicos. Entrevistamos designers e engenheiros de cada time para entender como criavam componentes, quais eram as maiores dores de consistência e o que esperavam de um design system centralizado.",
+    researchInsights: [
+      { title: "847 componentes únicos", detail: "Três produtos tinham centenas de variações duplicadas — 42 versões diferentes de botão foram encontradas." },
+      { title: "Retrabalho constante", detail: "Cada time recriava componentes do zero, gastando em média 30% do tempo de design em trabalho repetitivo." },
+      { title: "Inconsistência na UX", detail: "Usuários que navegavam entre produtos percebiam interfaces diferentes para as mesmas ações, gerando confusão." },
+      { title: "Falta de documentação", detail: "Nenhum componente tinha documentação de uso, levando a implementações incorretas pela engenharia." },
+    ],
+    personas: [
+      { name: "Carla", age: "31 anos", role: "Persona Principal", desc: "Product Designer sênior. Precisa de componentes prontos e documentados para focar em problemas de negócio ao invés de reinventar padrões visuais." },
+      { name: "Lucas", age: "27 anos", role: "Engenheiro Frontend", desc: "Implementa as interfaces e precisa de especificações claras, tokens consistentes e componentes reutilizáveis em código." },
+      { name: "Fernanda", age: "35 anos", role: "Head de Produto", desc: "Precisa garantir que a experiência seja consistente entre todos os produtos para fortalecer a marca e reduzir custos." },
+    ],
+    designPrinciples: [
+      { title: "Token-first", desc: "Toda decisão visual começa pelos tokens — cores, tipografia e espaçamento são definidos semanticamente antes de qualquer componente." },
+      { title: "Composabilidade", desc: "Componentes atômicos se combinam em moléculas e organismos, permitindo flexibilidade sem perder consistência." },
+      { title: "Governança aberta", desc: "O processo de RFC permite que qualquer membro do time proponha novos componentes, com critérios claros de aprovação." },
+      { title: "Documentação viva", desc: "Cada componente no Storybook inclui exemplos interativos, variantes, props e guias de quando usar (e quando não usar)." },
+    ],
+    learnings: [
+      "Um design system não é um projeto com fim — é um produto vivo que precisa de manutenção, governança e evolução contínua.",
+      "A adoção depende mais de relacionamento e suporte do que de qualidade técnica. Office hours semanais foram cruciais.",
+      "Começar pelos tokens (não pelos componentes) garantiu que a fundação fosse sólida antes de construir em cima.",
+      "O maior desafio não foi criar o sistema — foi convencer os times a abandonar seus componentes locais e adotar o compartilhado.",
+    ],
   },
   {
     id: "Filtro Aqualis",
