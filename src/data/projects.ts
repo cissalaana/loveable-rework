@@ -32,6 +32,11 @@ export interface Project {
   stakeholders: string[];
   methodologies: string[];
   gallery: string[];
+  research?: string;
+  researchInsights?: { title: string; detail: string }[];
+  personas?: { name: string; age: string; role: string; desc: string }[];
+  designPrinciples?: { title: string; desc: string }[];
+  learnings?: string[];
 }
 
 export const PROJECTS: Project[] = [
@@ -68,6 +73,32 @@ export const PROJECTS: Project[] = [
     stakeholders: ["Estudantes do campus (74 respondentes)", "Seguranças do campus", "Coordenadores de curso", "Técnicos de câmeras da UFPE", "Equipe de projeto (5 integrantes)"],
     methodologies: ["Design Thinking", "Pesquisa Quantitativa e Qualitativa", "Personas e Jornada do Usuário", "Crazy 8s", "Design de Interfaces Ubíquas (UUI)", "Prototipagem em Alta Fidelidade"],
     gallery: ["#EBA5A5", "#F5CEC7", "#FFCA8C", "#FAF5F0", "#EBA5A5", "#F5CEC7"],
+    research: "Antes de propor qualquer solução, realizamos uma pesquisa para entender a experiência real de segurança das mulheres no campus. Aplicamos um questionário online com 74 respostas de estudantes de diferentes cursos, investigando perfil, frequência no campus, meios de locomoção, percepção de segurança e satisfação com medidas existentes. Os dados revelaram que o problema não está apenas nos edifícios, mas nos deslocamentos entre eles — 50% das situações de vulnerabilidade acontecem fora dos centros acadêmicos.",
+    researchInsights: [
+      { title: "Locomoção a pé", detail: "97,3% das estudantes se locomovem a pé dentro do campus — qualquer solução precisa funcionar para quem está caminhando." },
+      { title: "Insegurança generalizada", detail: "85,1% das respondentes não se sentem seguras com as medidas atuais, mesmo sem ter presenciado ocorrências diretamente." },
+      { title: "CFCH como área crítica", detail: "43,2% apontaram o CFCH como o local menos seguro — áreas vazias, ruas afastadas e períodos noturnos concentram a maior insegurança." },
+      { title: "Subnotificação", detail: "47,3% das estudantes não se sentem à vontade para denunciar casos de assédio ou violência no campus." },
+    ],
+    personas: [
+      { name: "Maria Cecília", age: "21 anos", role: "Persona Principal", desc: "Estudante de Psicologia no 5º período. Faz estágio no HC e caminha sozinha pelo campus, especialmente à noite. Não quer mudar sua rotina — quer se sentir segura enquanto vive a vida que já tem." },
+      { name: "Erandir", age: "47 anos", role: "Segurança do campus", desc: "Precisa ser notificado rapidamente em casos de emergência para responder com agilidade." },
+      { name: "Márcio", age: "36 anos", role: "Coordenador de curso", desc: "Responsável pela distribuição dos dispositivos e cadastro das estudantes no sistema." },
+      { name: "Luiz", age: "40 anos", role: "Técnico de câmeras", desc: "Acessa imagens de segurança para auxiliar na verificação de ocorrências." },
+    ],
+    designPrinciples: [
+      { title: "Desatenção", desc: "O dispositivo funciona de forma independente — em situação de risco, a usuária não precisa desbloquear o celular ou abrir um app." },
+      { title: "Fluxo cognitivo", desc: "Interações mínimas para que a usuária mantenha o foco no ambiente ao redor, não na tecnologia." },
+      { title: "Sem modelo", desc: "O dispositivo pode ser acionado por voz ou por toque, sem necessidade de navegar menus." },
+      { title: "Medo de interação", desc: "O duplo clique evita acionamentos acidentais. Alertas falsos podem ser cancelados em segundos." },
+      { title: "Padrões", desc: "O app aprende com o histórico de rotas e sugere caminhos familiares automaticamente." },
+    ],
+    learnings: [
+      "Dados quantitativos mostram a dimensão do problema, mas relatos qualitativos revelam a experiência real das usuárias.",
+      "Produtos de segurança precisam funcionar mesmo sob estresse — cada clique a mais é um clique que ela pode não conseguir dar.",
+      "Design ubíquo não é sobre tecnologia invisível — é sobre tecnologia que respeita o contexto de quem usa.",
+      "Este foi meu primeiro projeto com foco em design de sistemas ubíquos, ampliando minha visão sobre como tecnologia pode se integrar ao cotidiano.",
+    ],
   },
   {
     id: "Redesign Letterboxd",

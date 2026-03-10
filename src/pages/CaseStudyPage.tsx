@@ -102,6 +102,66 @@ const CaseStudyPage = () => {
         </div>
       </section>
 
+      {/* Pesquisa */}
+      {project.research && (
+        <section className="section-pad" style={{ padding: "96px 48px", background: "#F7F0EA" }}>
+          <div style={{ maxWidth: 900, margin: "0 auto" }}>
+            <p className="reveal font-body text-[0.72rem] font-medium text-rose tracking-[0.2em] uppercase mb-[18px]">Pesquisa</p>
+            <h2 className="reveal reveal-d1 font-display font-semibold text-foreground mb-6" style={{ fontSize: "clamp(1.8rem,3.5vw,2.8rem)" }}>
+              O que descobrimos
+            </h2>
+            <p className="reveal reveal-d1 font-body text-[1.05rem] leading-[1.85] font-light mb-12" style={{ color: "#5A4A44" }}>
+              {project.research}
+            </p>
+            {project.researchInsights && (
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }} className="cs-grid">
+                {project.researchInsights.map((insight, i) => (
+                  <div key={i} className={`reveal reveal-d${(i % 2) + 1}`} style={{
+                    padding: "28px 24px", borderRadius: 12, background: "#fff",
+                    border: "1px solid rgba(44,24,16,0.07)",
+                  }}>
+                    <h4 className="font-display text-[1.05rem] font-semibold text-foreground mb-2">{insight.title}</h4>
+                    <p className="font-body text-[0.88rem] leading-[1.7] font-light" style={{ color: "#5A4A44" }}>{insight.detail}</p>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </section>
+      )}
+
+      {/* Personas */}
+      {project.personas && project.personas.length > 0 && (
+        <section className="section-pad bg-background" style={{ padding: "96px 48px" }}>
+          <div style={{ maxWidth: 900, margin: "0 auto" }}>
+            <p className="reveal font-body text-[0.72rem] font-medium text-meadow tracking-[0.2em] uppercase mb-[18px]">Personas</p>
+            <h2 className="reveal reveal-d1 font-display font-semibold text-foreground mb-6" style={{ fontSize: "clamp(1.8rem,3.5vw,2.8rem)" }}>
+              Para quem projetamos
+            </h2>
+            <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+              {project.personas.map((persona, i) => (
+                <div key={i} className={`reveal reveal-d${(i % 3) + 1}`} style={{
+                  padding: "32px 28px", borderRadius: 12,
+                  background: i === 0 ? "rgba(235,165,165,0.06)" : "#fff",
+                  border: i === 0 ? "1.5px solid rgba(235,165,165,0.25)" : "1px solid rgba(44,24,16,0.07)",
+                }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 12, flexWrap: "wrap" }}>
+                    <h4 className="font-display text-[1.15rem] font-semibold text-foreground">{persona.name}</h4>
+                    <span className="font-body text-[0.75rem] font-medium" style={{ color: "#9A8A82" }}>{persona.age}</span>
+                    <span style={{
+                      padding: "4px 14px", borderRadius: 50, fontSize: "0.72rem", fontWeight: 600,
+                      background: i === 0 ? "rgba(235,165,165,0.18)" : "rgba(164,189,168,0.15)",
+                      color: i === 0 ? "#C47878" : "#6A9470",
+                    }}>{persona.role}</span>
+                  </div>
+                  <p className="font-body text-[0.9rem] leading-[1.75] font-light" style={{ color: "#5A4A44" }}>{persona.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Métricas */}
       <section className="section-pad bg-foreground relative overflow-hidden" style={{ padding: "96px 48px" }}>
         <div style={{ position: "absolute", top: "-40px", left: "50%", transform: "translateX(-50%)", width: 600, height: 600, borderRadius: "50%", pointerEvents: "none", background: "radial-gradient(circle, rgba(235,165,165,0.08) 0%, transparent 70%)" }}/>
@@ -227,7 +287,62 @@ const CaseStudyPage = () => {
         </div>
       </section>
 
-      
+      {/* Princípios de Design */}
+      {project.designPrinciples && project.designPrinciples.length > 0 && (
+        <section className="section-pad bg-background" style={{ padding: "96px 48px" }}>
+          <div style={{ maxWidth: 900, margin: "0 auto" }}>
+            <p className="reveal font-body text-[0.72rem] font-medium text-rose tracking-[0.2em] uppercase mb-[18px]">Princípios</p>
+            <h2 className="reveal reveal-d1 font-display font-semibold text-foreground mb-6" style={{ fontSize: "clamp(1.8rem,3.5vw,2.8rem)" }}>
+              Diretrizes de design aplicadas
+            </h2>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: 16 }}>
+              {project.designPrinciples.map((p, i) => (
+                <div key={i} className={`reveal reveal-d${(i % 3) + 1}`} style={{
+                  padding: "28px 28px", borderRadius: 12,
+                  background: "#fff", border: "1px solid rgba(44,24,16,0.07)",
+                  display: "flex", gap: 20, alignItems: "flex-start",
+                }}>
+                  <div style={{
+                    width: 40, height: 40, borderRadius: "50%", flexShrink: 0,
+                    background: "rgba(235,165,165,0.12)", display: "flex", alignItems: "center", justifyContent: "center",
+                  }}>
+                    <span className="font-display text-[0.82rem] font-bold text-rose">{String(i + 1).padStart(2, "0")}</span>
+                  </div>
+                  <div>
+                    <h4 className="font-display text-[1.05rem] font-semibold text-foreground mb-1">{p.title}</h4>
+                    <p className="font-body text-[0.88rem] leading-[1.7] font-light" style={{ color: "#5A4A44" }}>{p.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Aprendizados */}
+      {project.learnings && project.learnings.length > 0 && (
+        <section className="section-pad" style={{ padding: "96px 48px", background: "#F7F0EA" }}>
+          <div style={{ maxWidth: 900, margin: "0 auto" }}>
+            <p className="reveal font-body text-[0.72rem] font-medium text-meadow tracking-[0.2em] uppercase mb-[18px]">Reflexões</p>
+            <h2 className="reveal reveal-d1 font-display font-semibold text-foreground mb-10" style={{ fontSize: "clamp(1.8rem,3.5vw,2.8rem)" }}>
+              Aprendizados do projeto
+            </h2>
+            <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+              {project.learnings.map((l, i) => (
+                <div key={i} className={`reveal reveal-d${(i % 3) + 1}`} style={{
+                  display: "flex", gap: 18, alignItems: "flex-start",
+                }}>
+                  <span style={{
+                    width: 10, height: 10, borderRadius: "50%", marginTop: 8, flexShrink: 0,
+                    background: i % 2 === 0 ? "#EBA5A5" : "#A4BDA8",
+                  }} />
+                  <p className="font-body text-[1rem] leading-[1.8] font-light" style={{ color: "#5A4A44" }}>{l}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Próximo projeto */}
       <section className="bg-foreground relative overflow-hidden" style={{ padding: "80px 48px" }}>
