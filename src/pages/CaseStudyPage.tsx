@@ -287,7 +287,62 @@ const CaseStudyPage = () => {
         </div>
       </section>
 
-      
+      {/* Princípios de Design */}
+      {project.designPrinciples && project.designPrinciples.length > 0 && (
+        <section className="section-pad bg-background" style={{ padding: "96px 48px" }}>
+          <div style={{ maxWidth: 900, margin: "0 auto" }}>
+            <p className="reveal font-body text-[0.72rem] font-medium text-rose tracking-[0.2em] uppercase mb-[18px]">Princípios</p>
+            <h2 className="reveal reveal-d1 font-display font-semibold text-foreground mb-6" style={{ fontSize: "clamp(1.8rem,3.5vw,2.8rem)" }}>
+              Diretrizes de design aplicadas
+            </h2>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: 16 }}>
+              {project.designPrinciples.map((p, i) => (
+                <div key={i} className={`reveal reveal-d${(i % 3) + 1}`} style={{
+                  padding: "28px 28px", borderRadius: 12,
+                  background: "#fff", border: "1px solid rgba(44,24,16,0.07)",
+                  display: "flex", gap: 20, alignItems: "flex-start",
+                }}>
+                  <div style={{
+                    width: 40, height: 40, borderRadius: "50%", flexShrink: 0,
+                    background: "rgba(235,165,165,0.12)", display: "flex", alignItems: "center", justifyContent: "center",
+                  }}>
+                    <span className="font-display text-[0.82rem] font-bold text-rose">{String(i + 1).padStart(2, "0")}</span>
+                  </div>
+                  <div>
+                    <h4 className="font-display text-[1.05rem] font-semibold text-foreground mb-1">{p.title}</h4>
+                    <p className="font-body text-[0.88rem] leading-[1.7] font-light" style={{ color: "#5A4A44" }}>{p.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Aprendizados */}
+      {project.learnings && project.learnings.length > 0 && (
+        <section className="section-pad" style={{ padding: "96px 48px", background: "#F7F0EA" }}>
+          <div style={{ maxWidth: 900, margin: "0 auto" }}>
+            <p className="reveal font-body text-[0.72rem] font-medium text-meadow tracking-[0.2em] uppercase mb-[18px]">Reflexões</p>
+            <h2 className="reveal reveal-d1 font-display font-semibold text-foreground mb-10" style={{ fontSize: "clamp(1.8rem,3.5vw,2.8rem)" }}>
+              Aprendizados do projeto
+            </h2>
+            <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+              {project.learnings.map((l, i) => (
+                <div key={i} className={`reveal reveal-d${(i % 3) + 1}`} style={{
+                  display: "flex", gap: 18, alignItems: "flex-start",
+                }}>
+                  <span style={{
+                    width: 10, height: 10, borderRadius: "50%", marginTop: 8, flexShrink: 0,
+                    background: i % 2 === 0 ? "#EBA5A5" : "#A4BDA8",
+                  }} />
+                  <p className="font-body text-[1rem] leading-[1.8] font-light" style={{ color: "#5A4A44" }}>{l}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Próximo projeto */}
       <section className="bg-foreground relative overflow-hidden" style={{ padding: "80px 48px" }}>
