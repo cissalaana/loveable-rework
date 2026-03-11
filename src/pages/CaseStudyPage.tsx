@@ -120,6 +120,67 @@ const CaseStudyPage = () => {
               </p>
             </div>
           </div>
+
+          {/* Featured Image */}
+          {project.featuredImage ? (
+            <div className="reveal reveal-d2" style={{ marginTop: 48, borderRadius: 16, overflow: "hidden", position: "relative" }}>
+              <div style={{
+                position: "relative",
+                background: `linear-gradient(135deg, ${project.color}22, ${project.color}44)`,
+                borderRadius: 16,
+                overflow: "hidden",
+              }}>
+                <img
+                  src={project.featuredImage}
+                  alt={`Destaque do projeto ${project.title}`}
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    maxHeight: 520,
+                    objectFit: "cover",
+                    display: "block",
+                  }}
+                  loading="lazy"
+                />
+                <div style={{
+                  position: "absolute", bottom: 0, left: 0, right: 0,
+                  height: "40%",
+                  background: `linear-gradient(to top, ${project.color}cc, transparent)`,
+                  pointerEvents: "none",
+                }} />
+                <div style={{
+                  position: "absolute", bottom: 24, left: 28,
+                  display: "flex", alignItems: "center", gap: 10,
+                }}>
+                  <span style={{
+                    padding: "8px 18px", borderRadius: 50,
+                    background: "rgba(255,255,255,0.9)", backdropFilter: "blur(8px)",
+                    fontSize: "0.75rem", fontWeight: 600, color: "#2C1810",
+                    letterSpacing: "0.04em",
+                  }}>
+                    ✦ Visão geral do projeto
+                  </span>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div className="reveal reveal-d2" style={{
+              marginTop: 48, borderRadius: 16, overflow: "hidden",
+              height: 360, background: `linear-gradient(135deg, ${project.color}33, ${project.color}66)`,
+              display: "flex", alignItems: "center", justifyContent: "center",
+              border: `2px dashed ${project.color}55`,
+            }}>
+              <div style={{ textAlign: "center" }}>
+                <span style={{ fontSize: "2.5rem", display: "block", marginBottom: 12, opacity: 0.5 }}>📷</span>
+                <p className="font-body text-[0.82rem] font-medium" style={{ color: "#9A8A82" }}>
+                  Adicione uma imagem destaque
+                </p>
+                <p className="font-body text-[0.68rem] font-light mt-1" style={{ color: "#B8A8A0" }}>
+                  featuredImage no projects.ts
+                </p>
+              </div>
+            </div>
+          )}
         </div>
       </section>
 
