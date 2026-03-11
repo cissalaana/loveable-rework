@@ -72,7 +72,7 @@ export const PROJECTS: Project[] = [
     ],
     stakeholders: ["Estudantes do campus (74 respondentes)", "Seguranças do campus", "Coordenadores de curso", "Técnicos de câmeras da UFPE", "Equipe de projeto (5 integrantes)"],
     methodologies: ["Design Thinking", "Pesquisa Quantitativa e Qualitativa", "Personas e Jornada do Usuário", "Crazy 8s", "Design de Interfaces Ubíquas (UUI)", "Prototipagem em Alta Fidelidade"],
-    gallery: ["#EBA5A5", "#F5CEC7", "#FFCA8C", "#FAF5F0", "#EBA5A5", "#F5CEC7"],
+    gallery: ["/assets/MockupGuardiã1.png", "/assets/MockupGuardiã2.png", "/assets/MockupGuardiã3.png", "/assets/MockupGuardiã4.png", "/assets/MockupGuardiã5.png", "/assets/MockupGuardiã6.png"],
     research: "Antes de propor qualquer solução, realizamos uma pesquisa para entender a experiência real de segurança das mulheres no campus. Aplicamos um questionário online com 74 respostas de estudantes de diferentes cursos, investigando perfil, frequência no campus, meios de locomoção, percepção de segurança e satisfação com medidas existentes. Os dados revelaram que o problema não está apenas nos edifícios, mas nos deslocamentos entre eles — 50% das situações de vulnerabilidade acontecem fora dos centros acadêmicos.",
     researchInsights: [
       { title: "Locomoção a pé", detail: "97,3% das estudantes se locomovem a pé dentro do campus — qualquer solução precisa funcionar para quem está caminhando." },
