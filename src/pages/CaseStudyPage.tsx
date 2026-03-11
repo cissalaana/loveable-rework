@@ -286,24 +286,38 @@ const CaseStudyPage = () => {
             Telas & Mockups
           </h2>
           <div className="gallery-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gridTemplateRows: "auto auto", gap: 16 }}>
-            {project.gallery.map((color, i) => (
-              <div key={i} className="gallery-item reveal" style={{
-                height: i === 0 ? 320 : i === 3 ? 320 : 200,
-                gridColumn: i === 0 ? "span 2" : i === 3 ? "span 2" : "span 1",
-                background: color,
-                display: "flex", alignItems: "center", justifyContent: "center",
-                position: "relative",
-              }}>
-                <div style={{ width: "100%", height: "100%", position: "absolute", backgroundImage: `radial-gradient(circle at 30% 70%, rgba(255,255,255,0.2) 0%, transparent 50%)` }}/>
-                <div className="font-body text-[0.72rem] font-medium tracking-[0.08em] uppercase" style={{
-                  border: "1.5px dashed rgba(255,255,255,0.4)", borderRadius: 8,
-                  padding: "16px 24px", color: "rgba(255,255,255,0.7)",
-                  zIndex: 1, position: "relative",
+            {project.gallery.map((item, i) => {
+              const isImage = /\.(png|jpe?g|webp|svg|gif)$/i.test(item) || item.startsWith("http") || item.startsWith("/");
+              return (
+                <div key={i} className="gallery-item reveal" style={{
+                  height: i === 0 ? 320 : i === 3 ? 320 : 200,
+                  gridColumn: i === 0 ? "span 2" : i === 3 ? "span 2" : "span 1",
+                  background: isImage ? "#E8DDD5" : item,
+                  display: "flex", alignItems: "center", justifyContent: "center",
+                  position: "relative", overflow: "hidden", borderRadius: 12,
                 }}>
-                  Mockup {i + 1}
+                  {isImage ? (
+                    <img
+                      src={item}
+                      alt={`Mockup ${i + 1}`}
+                      style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                      loading="lazy"
+                    />
+                  ) : (
+                    <>
+                      <div style={{ width: "100%", height: "100%", position: "absolute", backgroundImage: `radial-gradient(circle at 30% 70%, rgba(255,255,255,0.2) 0%, transparent 50%)` }}/>
+                      <div className="font-body text-[0.72rem] font-medium tracking-[0.08em] uppercase" style={{
+                        border: "1.5px dashed rgba(255,255,255,0.4)", borderRadius: 8,
+                        padding: "16px 24px", color: "rgba(255,255,255,0.7)",
+                        zIndex: 1, position: "relative",
+                      }}>
+                        Mockup {i + 1}
+                      </div>
+                    </>
+                  )}
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
