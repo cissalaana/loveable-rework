@@ -37,6 +37,7 @@ export interface Project {
   personas?: { name: string; age: string; role: string; desc: string }[];
   designPrinciples?: { title: string; desc: string }[];
   learnings?: string[];
+  featuredImage?: string;
 }
 
 export const PROJECTS: Project[] = [
