@@ -222,7 +222,7 @@ export const PROJECTS: Project[] = [
     id: "Filtro Aqualis",
     title: "Filtro Aqualis",
     subtitle: "Redesign com foco em engajamento e impacto social",
-    desc: "Pesquisa e redesign de uma plataforma de voluntariado, resultando em 60% mais engajamento dos usuários e +3.200 voluntários ativos.",
+    desc: "Baseado na Biomimética, o Filtro Aqualis é um sistema de purificação de água inspirado na estrutura dos filtros naturais encontrados em manguezais. O design combina eficiência, sustentabilidade e estética orgânica para oferecer uma solução acessível e de baixo impacto ambiental para comunidades com acesso limitado à água potável.",
     tags: ["Research", "UX", "Testes A/B"],
     category: "Web",
     color: "#C7C19D",
