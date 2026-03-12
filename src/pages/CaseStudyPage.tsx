@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useReveal } from "@/hooks/useReveal";
 import { PROJECTS } from "@/data/projects";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 
 // Returns true if a hex color is dark
 const isDarkColor = (hex: string) => {
@@ -12,6 +14,7 @@ const isDarkColor = (hex: string) => {
 };
 
 const CaseStudyPage = () => {
+  const [zoomedImage, setZoomedImage] = useState<string | null>(null);
   useReveal();
   const { id } = useParams();
   const navigate = useNavigate();
@@ -307,13 +310,13 @@ const CaseStudyPage = () => {
 
                 if (section.type === "image") {
                   return (
-                    <div key={secIdx} className="reveal" style={{ borderRadius: 16, overflow: "hidden" }}>
+                    <div key={secIdx} className="reveal" style={{ borderRadius: 16, overflow: "hidden", cursor: "zoom-in" }} onClick={() => section.image && setZoomedImage(section.image)}>
                       <img
                         src={section.image}
                         alt={section.imageCaption || `Sprint ${sprintIdx + 1} imagem`}
                         style={{
                           width: "100%", height: "auto", maxHeight: 520,
-                          objectFit: "cover", display: "block", borderRadius: 16,
+                          objectFit: "contain", display: "block", borderRadius: 16,
                         }}
                         loading="lazy"
                       />
@@ -483,12 +486,13 @@ const CaseStudyPage = () => {
                   background: isImage ? "#E8DDD5" : item,
                   display: "flex", alignItems: "center", justifyContent: "center",
                   position: "relative", overflow: "hidden", borderRadius: 12,
-                }}>
+                  cursor: isImage ? "zoom-in" : "default",
+                }} onClick={() => isImage && setZoomedImage(item)}>
                   {isImage ? (
                     <img
                       src={item}
                       alt={`Mockup ${i + 1}`}
-                      style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                      style={{ width: "100%", height: "100%", objectFit: "contain" }}
                       loading="lazy"
                     />
                   ) : (
@@ -509,6 +513,19 @@ const CaseStudyPage = () => {
           </div>
         </div>
       </section>
+
+      {/* Image Zoom Dialog */}
+      <Dialog open={!!zoomedImage} onOpenChange={() => setZoomedImage(null)}>
+        <DialogContent className="max-w-[90vw] max-h-[90vh] p-2 bg-transparent border-none shadow-none" style={{ background: "transparent" }}>
+          {zoomedImage && (
+            <img
+              src={zoomedImage}
+              alt="Imagem ampliada"
+              style={{ width: "100%", height: "auto", maxHeight: "85vh", objectFit: "contain", borderRadius: 12 }}
+            />
+          )}
+        </DialogContent>
+      </Dialog>
 
       {/* Princípios de Design */}
       {project.designPrinciples && project.designPrinciples.length > 0 && (

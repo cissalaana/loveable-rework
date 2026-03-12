@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CustomCursor from "@/components/CustomCursor";
+import DraggableStickers from "@/components/DraggableStickers";
 import HomePage from "@/pages/HomePage";
 import ProjectsPage from "@/pages/ProjectsPage";
 import CaseStudyPage from "@/pages/CaseStudyPage";
@@ -16,11 +17,12 @@ import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
 const Layout = ({ children }: { children: React.ReactNode }) => (
-  <>
+  <div style={{ position: "relative" }}>
     <Navbar />
     <main>{children}</main>
     <Footer />
-  </>
+    <DraggableStickers />
+  </div>
 );
 
 const App = () => (

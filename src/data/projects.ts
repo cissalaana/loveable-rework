@@ -233,6 +233,56 @@ export const PROJECTS: Project[] = [
       "Design inclusivo não é um extra — é um requisito fundamental quando seu público tem perfis tão diversos.",
       "Card sorting com usuários reais reorganizou completamente a hierarquia de informação que havíamos planejado inicialmente.",
     ],
+    sprints: [
+      {
+        label: "01. IMERSÃO",
+        title: "Mergulhando no Universo Cinéfilo",
+        subtitle: "Shadowing de 2 semanas com gestores escolares e entrevistas semiestruturadas para mapear comportamentos reais.",
+        sections: [
+          { type: "text", title: "Contexto da Pesquisa", text: "Acompanhamos 8 gestores escolares em seu ambiente de trabalho durante 2 semanas, observando como tomavam decisões, quais ferramentas usavam e onde estavam os maiores gargalos no fluxo de trabalho diário." },
+          { type: "bullets", title: "Descobertas do Shadowing", items: [
+            "100% dos gestores usavam planilhas manuais como principal ferramenta de análise",
+            "Decisões reativas: intervenções pedagógicas aconteciam tarde demais por falta de dados em tempo real",
+            "Nível de familiaridade com tecnologia variava enormemente entre gestores",
+            "Informações espalhadas em 4+ sistemas diferentes dificultavam uma visão unificada",
+          ]},
+          { type: "cards", title: "Oportunidades Identificadas", cards: [
+            { icon: "📊", title: "Visualização progressiva", desc: "Do simples ao complexo — revelar dados gradualmente conforme a familiaridade do gestor." },
+            { icon: "🔔", title: "Alertas automáticos", desc: "Indicadores críticos precisam gerar notificações proativas, não esperar que o gestor descubra." },
+            { icon: "📱", title: "Mobile-first", desc: "Gestores passam mais tempo fora do escritório do que dentro — a solução precisa ser mobile." },
+          ]},
+        ],
+      },
+      {
+        label: "02. DEFINIÇÃO & ARQUITETURA",
+        title: "Organizando a Complexidade",
+        subtitle: "Workshop de priorização com MoSCoW e card sorting para definir hierarquia de informação.",
+        sections: [
+          { type: "text", title: "Priorização com MoSCoW", text: "Realizamos um workshop com gestores, coordenadores e analistas da secretaria para priorizar os 12 indicadores mais críticos usando a técnica MoSCoW. O card sorting com usuários reais reorganizou completamente a hierarquia que havíamos planejado inicialmente." },
+          { type: "bullets", title: "Indicadores Priorizados (Must Have)", items: [
+            "Taxa de frequência diária por turma com alertas de queda",
+            "Desempenho médio por disciplina com comparativo histórico",
+            "Índice de evasão com previsão baseada em padrões identificados",
+            "Relatório exportável em um clique para reuniões com a secretaria",
+          ]},
+          { type: "quote", text: "\"Se eu pudesse ver só uma coisa pela manhã, seria quem está faltando muito — porque é aí que começa a evasão.\" — Dona Marta, Diretora" },
+        ],
+      },
+      {
+        label: "03. VISUALIZAÇÃO & TESTES",
+        title: "Testando com Quem Usa",
+        subtitle: "Exploração de 6 modelos de chart e testes A/B com 40 gestores de diferentes perfis.",
+        sections: [
+          { type: "text", title: "Processo de Validação", text: "Testamos 6 modelos de visualização diferentes com gestores reais. Os testes A/B entre 2 versões finais do dashboard envolveram 40 gestores de diferentes perfis de letramento digital, revelando que simplicidade vence sofisticação visual em todos os perfis." },
+          { type: "cards", title: "Resultados dos Testes A/B", cards: [
+            { icon: "✅", title: "Versão simplificada", desc: "73% dos gestores completaram tarefas mais rápido com a versão de cards simples vs. gráficos complexos." },
+            { icon: "♿", title: "Acessibilidade", desc: "Modo de alto contraste e suporte daltônico testados com 8 gestores com necessidades visuais específicas." },
+            { icon: "⚡", title: "Time-to-insight", desc: "Tempo médio para encontrar uma informação crítica caiu de 3 minutos para 18 segundos." },
+            { icon: "📤", title: "Exportação", desc: "Relatórios que levavam 45 min em planilha agora são gerados em 1 clique — testado e validado." },
+          ]},
+        ],
+      },
+    ],
   },
   {
     id: "Redesign Craigslist",
@@ -291,6 +341,56 @@ export const PROJECTS: Project[] = [
       "Começar pelos tokens (não pelos componentes) garantiu que a fundação fosse sólida antes de construir em cima.",
       "O maior desafio não foi criar o sistema — foi convencer os times a abandonar seus componentes locais e adotar o compartilhado.",
     ],
+    sprints: [
+      {
+        label: "01. AUDITORIA",
+        title: "Mapeando o Caos Visual",
+        subtitle: "Inventário visual completo dos 3 produtos para entender a dimensão do problema de inconsistência.",
+        sections: [
+          { type: "text", title: "O Inventário", text: "Catalogamos todos os componentes existentes nos 3 produtos da fintech. O resultado foi alarmante: 847 componentes únicos, com 42 versões diferentes de botão e nenhuma documentação de uso. Cada time recriava padrões do zero." },
+          { type: "bullets", title: "Principais Achados", items: [
+            "42 versões diferentes de botão encontradas entre os 3 produtos",
+            "Nenhum componente tinha documentação de uso ou especificação técnica",
+            "30% do tempo de design era gasto em trabalho repetitivo — recriando componentes",
+            "Usuários percebiam interfaces diferentes para as mesmas ações entre produtos",
+          ]},
+          { type: "cards", title: "Categorias de Inconsistência", cards: [
+            { icon: "🎨", title: "Cores", desc: "34 tons de azul diferentes usados como 'cor primária' entre os produtos." },
+            { icon: "🔤", title: "Tipografia", desc: "3 famílias tipográficas diferentes, com 18 variações de tamanho sem padrão." },
+            { icon: "📐", title: "Espaçamento", desc: "Nenhum sistema de grid ou escala de espaçamento — valores arbitrários em cada tela." },
+          ]},
+        ],
+      },
+      {
+        label: "02. FUNDAÇÃO & TOKENS",
+        title: "Construindo a Base",
+        subtitle: "Definição de tokens semânticos como fundação do sistema — cores, tipografia, espaçamento e elevação.",
+        sections: [
+          { type: "text", title: "Design Tokens", text: "Optamos por uma abordagem token-first: toda decisão visual começa pelos tokens antes de qualquer componente. Definimos tokens primitivos (valores brutos) e semânticos (contextuais) para cor, tipografia, espaçamento e elevação." },
+          { type: "bullets", title: "Decisões Arquiteturais", items: [
+            "Tokens primitivos → semânticos: --blue-500 vira --color-action-primary",
+            "Escala tipográfica de 8 tamanhos cobrindo 100% dos casos de uso",
+            "Sistema de espaçamento em múltiplos de 4px (4, 8, 12, 16, 24, 32, 48, 64)",
+            "Figma como fonte da verdade com sincronização automática para código",
+          ]},
+          { type: "quote", text: "\"Quando você acerta os tokens, os componentes quase se constroem sozinhos.\" — Feedback do time de engenharia após adoção" },
+        ],
+      },
+      {
+        label: "03. COMPONENTIZAÇÃO & ADOÇÃO",
+        title: "Do Átomo ao Organismo",
+        subtitle: "42 componentes atômicos + 28 moleculares seguindo Atomic Design, com Storybook e governança.",
+        sections: [
+          { type: "text", title: "Atomic Design na Prática", text: "Seguimos Atomic Design para organizar a componentização: átomos (botão, input, badge), moléculas (campo de formulário, card), e organismos (header, sidebar). Cada componente foi documentado no Storybook com exemplos interativos e guias de uso." },
+          { type: "cards", title: "Processo de Adoção", cards: [
+            { icon: "📖", title: "Storybook", desc: "Exemplos interativos, todas as props documentadas e guias de quando usar (e quando não usar)." },
+            { icon: "🎓", title: "Workshop de 2 dias", desc: "Treinamento prático com todos os times de design e engenharia para onboarding no sistema." },
+            { icon: "☕", title: "Office Hours", desc: "Sessões semanais de suporte por 3 meses — cruciais para resolver dúvidas e resistências." },
+            { icon: "🗳️", title: "Processo RFC", desc: "Request for Component: qualquer membro pode propor novos componentes com critérios claros." },
+          ]},
+        ],
+      },
+    ],
   },
   {
     id: "Filtro Aqualis",
@@ -348,6 +448,56 @@ export const PROJECTS: Project[] = [
       "Gamification funciona quando reforça motivadores intrínsecos (propósito, progresso, pertencimento), não quando é superficial.",
       "Roll-out gradual (20% → 50% → 100%) permitiu identificar e corrigir problemas antes de impactar toda a base.",
       "Testes de conceito com protótipos rápidos economizaram semanas de desenvolvimento ao validar a direção antes de investir em código.",
+    ],
+    sprints: [
+      {
+        label: "01. PESQUISA QUALITATIVA",
+        title: "Ouvindo Quem Quer Ajudar",
+        subtitle: "30 entrevistas em profundidade com três perfis de voluntários para entender barreiras reais à ação.",
+        sections: [
+          { type: "text", title: "Três Perfis, Três Histórias", text: "Entrevistamos voluntários ativos (participam regularmente), inativos (pararam após cadastro) e nunca-ativados (nunca realizaram nenhuma ação). Cada perfil revelou barreiras diferentes — mas todos compartilhavam uma coisa: a vontade genuína de ajudar." },
+          { type: "bullets", title: "Barreiras por Perfil", items: [
+            "Ativos: falta de feedback sobre impacto reduzia motivação para continuar",
+            "Inativos: oportunidades exigiam mais tempo do que tinham disponível",
+            "Nunca-ativados: excesso de opções e falta de orientação travavam a primeira ação",
+            "Todos: falta de confiança nas ONGs listadas — sem avaliações ou transparência",
+          ]},
+          { type: "quote", text: "\"Eu quero ajudar, mas quando abro o app e vejo 200 causas, eu travo. Não sei por onde começar.\" — Beatriz, 26 anos" },
+        ],
+      },
+      {
+        label: "02. ANÁLISE DE FUNIL & IDEAÇÃO",
+        title: "Onde o Abandono Acontece",
+        subtitle: "Mapeamento de drop-off com Hotjar e Google Analytics combinado com sessões de ideação.",
+        sections: [
+          { type: "text", title: "O Funil Quebrado", text: "A análise de funil revelou que 78% do abandono acontecia no step de escolha de causa — o paradoxo da escolha em ação. Com How Might We e Crazy 8s, geramos 3 conceitos que foram prototipados rapidamente para teste." },
+          { type: "cards", title: "3 Conceitos Prototipados", cards: [
+            { icon: "🎯", title: "Match por quiz", desc: "5 perguntas rápidas para sugerir causas compatíveis com perfil, habilidades e disponibilidade." },
+            { icon: "🎮", title: "Jornada gamificada", desc: "Progresso visual com badges, streaks e impacto acumulado para manter engajamento." },
+            { icon: "👥", title: "Onboarding social", desc: "Ver o que amigos apoiam e começar por causas validadas pela rede de confiança." },
+          ]},
+          { type: "bullets", title: "Resultado dos Testes de Conceito", items: [
+            "Conceito 2 (Match + Gamification) venceu com 87% de preferência em testes com 15 usuários",
+            "Quiz de 5 perguntas reduziu tempo de match de 8min para 2min no protótipo",
+            "Elemento social foi incorporado como feature secundária ao conceito vencedor",
+          ]},
+        ],
+      },
+      {
+        label: "03. REFINAMENTO & LANÇAMENTO",
+        title: "Iteração Baseada em Dados",
+        subtitle: "2 rodadas de iteração e roll-out gradual para 20% → 50% → 100% da base.",
+        sections: [
+          { type: "text", title: "Iteração com Propósito", text: "Após os testes de conceito, realizamos 2 rodadas de refinamento focadas em clareza (simplificar textos), confiança (adicionar avaliações e métricas de impacto) e momentum (celebrar cada micro-ação do voluntário)." },
+          { type: "cards", title: "Features Finais", cards: [
+            { icon: "🧠", title: "Match inteligente", desc: "Algoritmo conecta voluntário a causa com base em habilidades, localização e disponibilidade." },
+            { icon: "🏅", title: "Sistema de progresso", desc: "Badges, streaks e impacto acumulado visível — cada ação pequena é celebrada." },
+            { icon: "⭐", title: "Trust score", desc: "ONGs com avaliações, depoimentos e métricas de impacto para construir confiança." },
+            { icon: "🔔", title: "Lembretes contextuais", desc: "Notificações baseadas na disponibilidade declarada, não em horários arbitrários." },
+          ]},
+          { type: "quote", text: "\"Pela primeira vez eu senti que o app entendeu o que eu quero e quando eu posso ajudar.\" — Voluntária durante beta test" },
+        ],
+      },
     ],
   },
 {
