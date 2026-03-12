@@ -244,6 +244,133 @@ const CaseStudyPage = () => {
         </section>
       )}
 
+      {/* Sprints */}
+      {project.sprints && project.sprints.length > 0 && project.sprints.map((sprint, sprintIdx) => (
+        <section
+          key={sprintIdx}
+          className="section-pad"
+          style={{
+            padding: "96px 48px",
+            background: sprintIdx % 2 === 0 ? "#F7F0EA" : "hsl(var(--background))",
+          }}
+        >
+          <div style={{ maxWidth: 900, margin: "0 auto" }}>
+            <p className="reveal font-body text-[0.72rem] font-semibold text-rose tracking-[0.2em] uppercase mb-4">
+              {sprint.label}
+            </p>
+            <h2 className="reveal reveal-d1 font-display font-semibold text-foreground mb-3" style={{ fontSize: "clamp(1.8rem,3.5vw,2.8rem)" }}>
+              {sprint.title}
+            </h2>
+            {sprint.subtitle && (
+              <p className="reveal reveal-d1 font-body text-[1.05rem] leading-[1.85] font-light mb-12" style={{ color: "#5A4A44" }}>
+                {sprint.subtitle}
+              </p>
+            )}
+
+            <div style={{ display: "flex", flexDirection: "column", gap: 40 }}>
+              {sprint.sections.map((section, secIdx) => {
+                if (section.type === "text") {
+                  return (
+                    <div key={secIdx} className="reveal">
+                      {section.title && (
+                        <h3 className="font-display text-[1.2rem] font-semibold text-foreground mb-3">{section.title}</h3>
+                      )}
+                      <p className="font-body text-[0.95rem] leading-[1.85] font-light" style={{ color: "#5A4A44" }}>
+                        {section.text}
+                      </p>
+                    </div>
+                  );
+                }
+
+                if (section.type === "bullets") {
+                  return (
+                    <div key={secIdx} className="reveal">
+                      {section.title && (
+                        <h3 className="font-display text-[1.2rem] font-semibold text-foreground mb-4">{section.title}</h3>
+                      )}
+                      <ul style={{ display: "flex", flexDirection: "column", gap: 12, paddingLeft: 0, listStyle: "none" }}>
+                        {section.items?.map((item, itemIdx) => (
+                          <li key={itemIdx} style={{ display: "flex", gap: 14, alignItems: "flex-start" }}>
+                            <span style={{
+                              width: 8, height: 8, borderRadius: "50%", marginTop: 8, flexShrink: 0,
+                              background: "hsl(var(--rose))",
+                            }} />
+                            <span className="font-body text-[0.92rem] leading-[1.75] font-light" style={{ color: "#5A4A44" }}>
+                              {item}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  );
+                }
+
+                if (section.type === "image") {
+                  return (
+                    <div key={secIdx} className="reveal" style={{ borderRadius: 16, overflow: "hidden" }}>
+                      <img
+                        src={section.image}
+                        alt={section.imageCaption || `Sprint ${sprintIdx + 1} imagem`}
+                        style={{
+                          width: "100%", height: "auto", maxHeight: 520,
+                          objectFit: "cover", display: "block", borderRadius: 16,
+                        }}
+                        loading="lazy"
+                      />
+                      {section.imageCaption && (
+                        <p className="font-body text-[0.78rem] font-light mt-3 text-center" style={{ color: "#9A8A82" }}>
+                          {section.imageCaption}
+                        </p>
+                      )}
+                    </div>
+                  );
+                }
+
+                if (section.type === "cards") {
+                  return (
+                    <div key={secIdx} className="reveal">
+                      {section.title && (
+                        <h3 className="font-display text-[1.2rem] font-semibold text-foreground mb-5">{section.title}</h3>
+                      )}
+                      <div className="cs-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
+                        {section.cards?.map((card, cardIdx) => (
+                          <div key={cardIdx} className={`reveal reveal-d${(cardIdx % 2) + 1}`} style={{
+                            padding: "28px 24px", borderRadius: 12,
+                            background: sprintIdx % 2 === 0 ? "#fff" : "rgba(247,240,234,0.5)",
+                            border: "1px solid rgba(44,24,16,0.07)",
+                          }}>
+                            {card.icon && (
+                              <span style={{ fontSize: "1.5rem", display: "block", marginBottom: 12 }}>{card.icon}</span>
+                            )}
+                            <h4 className="font-display text-[1rem] font-semibold text-foreground mb-2">{card.title}</h4>
+                            <p className="font-body text-[0.85rem] leading-[1.7] font-light" style={{ color: "#5A4A44" }}>{card.desc}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                }
+
+                if (section.type === "quote") {
+                  return (
+                    <div key={secIdx} className="reveal" style={{
+                      borderLeft: "3px solid hsl(var(--rose))",
+                      paddingLeft: 28, paddingTop: 8, paddingBottom: 8,
+                    }}>
+                      <p className="font-display text-[1.15rem] font-light leading-[1.8] italic" style={{ color: "#5A4A44" }}>
+                        {section.text}
+                      </p>
+                    </div>
+                  );
+                }
+
+                return null;
+              })}
+            </div>
+          </div>
+        </section>
+      ))}
+
       {/* Métricas */}
       <section className="section-pad bg-foreground relative overflow-hidden" style={{ padding: "96px 48px" }}>
         <div style={{ position: "absolute", top: "-40px", left: "50%", transform: "translateX(-50%)", width: 600, height: 600, borderRadius: "50%", pointerEvents: "none", background: "radial-gradient(circle, rgba(235,165,165,0.08) 0%, transparent 70%)" }}/>
