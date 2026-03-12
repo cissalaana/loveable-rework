@@ -233,6 +233,56 @@ export const PROJECTS: Project[] = [
       "Design inclusivo não é um extra — é um requisito fundamental quando seu público tem perfis tão diversos.",
       "Card sorting com usuários reais reorganizou completamente a hierarquia de informação que havíamos planejado inicialmente.",
     ],
+    sprints: [
+      {
+        label: "01. IMERSÃO",
+        title: "Mergulhando no Universo Cinéfilo",
+        subtitle: "Shadowing de 2 semanas com gestores escolares e entrevistas semiestruturadas para mapear comportamentos reais.",
+        sections: [
+          { type: "text", title: "Contexto da Pesquisa", text: "Acompanhamos 8 gestores escolares em seu ambiente de trabalho durante 2 semanas, observando como tomavam decisões, quais ferramentas usavam e onde estavam os maiores gargalos no fluxo de trabalho diário." },
+          { type: "bullets", title: "Descobertas do Shadowing", items: [
+            "100% dos gestores usavam planilhas manuais como principal ferramenta de análise",
+            "Decisões reativas: intervenções pedagógicas aconteciam tarde demais por falta de dados em tempo real",
+            "Nível de familiaridade com tecnologia variava enormemente entre gestores",
+            "Informações espalhadas em 4+ sistemas diferentes dificultavam uma visão unificada",
+          ]},
+          { type: "cards", title: "Oportunidades Identificadas", cards: [
+            { icon: "📊", title: "Visualização progressiva", desc: "Do simples ao complexo — revelar dados gradualmente conforme a familiaridade do gestor." },
+            { icon: "🔔", title: "Alertas automáticos", desc: "Indicadores críticos precisam gerar notificações proativas, não esperar que o gestor descubra." },
+            { icon: "📱", title: "Mobile-first", desc: "Gestores passam mais tempo fora do escritório do que dentro — a solução precisa ser mobile." },
+          ]},
+        ],
+      },
+      {
+        label: "02. DEFINIÇÃO & ARQUITETURA",
+        title: "Organizando a Complexidade",
+        subtitle: "Workshop de priorização com MoSCoW e card sorting para definir hierarquia de informação.",
+        sections: [
+          { type: "text", title: "Priorização com MoSCoW", text: "Realizamos um workshop com gestores, coordenadores e analistas da secretaria para priorizar os 12 indicadores mais críticos usando a técnica MoSCoW. O card sorting com usuários reais reorganizou completamente a hierarquia que havíamos planejado inicialmente." },
+          { type: "bullets", title: "Indicadores Priorizados (Must Have)", items: [
+            "Taxa de frequência diária por turma com alertas de queda",
+            "Desempenho médio por disciplina com comparativo histórico",
+            "Índice de evasão com previsão baseada em padrões identificados",
+            "Relatório exportável em um clique para reuniões com a secretaria",
+          ]},
+          { type: "quote", text: "\"Se eu pudesse ver só uma coisa pela manhã, seria quem está faltando muito — porque é aí que começa a evasão.\" — Dona Marta, Diretora" },
+        ],
+      },
+      {
+        label: "03. VISUALIZAÇÃO & TESTES",
+        title: "Testando com Quem Usa",
+        subtitle: "Exploração de 6 modelos de chart e testes A/B com 40 gestores de diferentes perfis.",
+        sections: [
+          { type: "text", title: "Processo de Validação", text: "Testamos 6 modelos de visualização diferentes com gestores reais. Os testes A/B entre 2 versões finais do dashboard envolveram 40 gestores de diferentes perfis de letramento digital, revelando que simplicidade vence sofisticação visual em todos os perfis." },
+          { type: "cards", title: "Resultados dos Testes A/B", cards: [
+            { icon: "✅", title: "Versão simplificada", desc: "73% dos gestores completaram tarefas mais rápido com a versão de cards simples vs. gráficos complexos." },
+            { icon: "♿", title: "Acessibilidade", desc: "Modo de alto contraste e suporte daltônico testados com 8 gestores com necessidades visuais específicas." },
+            { icon: "⚡", title: "Time-to-insight", desc: "Tempo médio para encontrar uma informação crítica caiu de 3 minutos para 18 segundos." },
+            { icon: "📤", title: "Exportação", desc: "Relatórios que levavam 45 min em planilha agora são gerados em 1 clique — testado e validado." },
+          ]},
+        ],
+      },
+    ],
   },
   {
     id: "Redesign Craigslist",
