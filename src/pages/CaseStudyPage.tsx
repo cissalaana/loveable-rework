@@ -310,13 +310,13 @@ const CaseStudyPage = () => {
 
                 if (section.type === "image") {
                   return (
-                    <div key={secIdx} className="reveal" style={{ borderRadius: 16, overflow: "hidden" }}>
+                    <div key={secIdx} className="reveal" style={{ borderRadius: 16, overflow: "hidden", cursor: "zoom-in" }} onClick={() => section.image && setZoomedImage(section.image)}>
                       <img
                         src={section.image}
                         alt={section.imageCaption || `Sprint ${sprintIdx + 1} imagem`}
                         style={{
                           width: "100%", height: "auto", maxHeight: 520,
-                          objectFit: "cover", display: "block", borderRadius: 16,
+                          objectFit: "contain", display: "block", borderRadius: 16,
                         }}
                         loading="lazy"
                       />

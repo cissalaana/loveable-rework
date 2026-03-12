@@ -17,11 +17,12 @@ import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
 const Layout = ({ children }: { children: React.ReactNode }) => (
-  <>
+  <div style={{ position: "relative" }}>
     <Navbar />
     <main>{children}</main>
     <Footer />
-  </>
+    <DraggableStickers />
+  </div>
 );
 
 const App = () => (
