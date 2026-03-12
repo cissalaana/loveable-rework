@@ -449,6 +449,56 @@ export const PROJECTS: Project[] = [
       "Roll-out gradual (20% → 50% → 100%) permitiu identificar e corrigir problemas antes de impactar toda a base.",
       "Testes de conceito com protótipos rápidos economizaram semanas de desenvolvimento ao validar a direção antes de investir em código.",
     ],
+    sprints: [
+      {
+        label: "01. PESQUISA QUALITATIVA",
+        title: "Ouvindo Quem Quer Ajudar",
+        subtitle: "30 entrevistas em profundidade com três perfis de voluntários para entender barreiras reais à ação.",
+        sections: [
+          { type: "text", title: "Três Perfis, Três Histórias", text: "Entrevistamos voluntários ativos (participam regularmente), inativos (pararam após cadastro) e nunca-ativados (nunca realizaram nenhuma ação). Cada perfil revelou barreiras diferentes — mas todos compartilhavam uma coisa: a vontade genuína de ajudar." },
+          { type: "bullets", title: "Barreiras por Perfil", items: [
+            "Ativos: falta de feedback sobre impacto reduzia motivação para continuar",
+            "Inativos: oportunidades exigiam mais tempo do que tinham disponível",
+            "Nunca-ativados: excesso de opções e falta de orientação travavam a primeira ação",
+            "Todos: falta de confiança nas ONGs listadas — sem avaliações ou transparência",
+          ]},
+          { type: "quote", text: "\"Eu quero ajudar, mas quando abro o app e vejo 200 causas, eu travo. Não sei por onde começar.\" — Beatriz, 26 anos" },
+        ],
+      },
+      {
+        label: "02. ANÁLISE DE FUNIL & IDEAÇÃO",
+        title: "Onde o Abandono Acontece",
+        subtitle: "Mapeamento de drop-off com Hotjar e Google Analytics combinado com sessões de ideação.",
+        sections: [
+          { type: "text", title: "O Funil Quebrado", text: "A análise de funil revelou que 78% do abandono acontecia no step de escolha de causa — o paradoxo da escolha em ação. Com How Might We e Crazy 8s, geramos 3 conceitos que foram prototipados rapidamente para teste." },
+          { type: "cards", title: "3 Conceitos Prototipados", cards: [
+            { icon: "🎯", title: "Match por quiz", desc: "5 perguntas rápidas para sugerir causas compatíveis com perfil, habilidades e disponibilidade." },
+            { icon: "🎮", title: "Jornada gamificada", desc: "Progresso visual com badges, streaks e impacto acumulado para manter engajamento." },
+            { icon: "👥", title: "Onboarding social", desc: "Ver o que amigos apoiam e começar por causas validadas pela rede de confiança." },
+          ]},
+          { type: "bullets", title: "Resultado dos Testes de Conceito", items: [
+            "Conceito 2 (Match + Gamification) venceu com 87% de preferência em testes com 15 usuários",
+            "Quiz de 5 perguntas reduziu tempo de match de 8min para 2min no protótipo",
+            "Elemento social foi incorporado como feature secundária ao conceito vencedor",
+          ]},
+        ],
+      },
+      {
+        label: "03. REFINAMENTO & LANÇAMENTO",
+        title: "Iteração Baseada em Dados",
+        subtitle: "2 rodadas de iteração e roll-out gradual para 20% → 50% → 100% da base.",
+        sections: [
+          { type: "text", title: "Iteração com Propósito", text: "Após os testes de conceito, realizamos 2 rodadas de refinamento focadas em clareza (simplificar textos), confiança (adicionar avaliações e métricas de impacto) e momentum (celebrar cada micro-ação do voluntário)." },
+          { type: "cards", title: "Features Finais", cards: [
+            { icon: "🧠", title: "Match inteligente", desc: "Algoritmo conecta voluntário a causa com base em habilidades, localização e disponibilidade." },
+            { icon: "🏅", title: "Sistema de progresso", desc: "Badges, streaks e impacto acumulado visível — cada ação pequena é celebrada." },
+            { icon: "⭐", title: "Trust score", desc: "ONGs com avaliações, depoimentos e métricas de impacto para construir confiança." },
+            { icon: "🔔", title: "Lembretes contextuais", desc: "Notificações baseadas na disponibilidade declarada, não em horários arbitrários." },
+          ]},
+          { type: "quote", text: "\"Pela primeira vez eu senti que o app entendeu o que eu quero e quando eu posso ajudar.\" — Voluntária durante beta test" },
+        ],
+      },
+    ],
   },
 {
   id: "novo-projeto",
