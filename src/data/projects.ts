@@ -341,6 +341,56 @@ export const PROJECTS: Project[] = [
       "Começar pelos tokens (não pelos componentes) garantiu que a fundação fosse sólida antes de construir em cima.",
       "O maior desafio não foi criar o sistema — foi convencer os times a abandonar seus componentes locais e adotar o compartilhado.",
     ],
+    sprints: [
+      {
+        label: "01. AUDITORIA",
+        title: "Mapeando o Caos Visual",
+        subtitle: "Inventário visual completo dos 3 produtos para entender a dimensão do problema de inconsistência.",
+        sections: [
+          { type: "text", title: "O Inventário", text: "Catalogamos todos os componentes existentes nos 3 produtos da fintech. O resultado foi alarmante: 847 componentes únicos, com 42 versões diferentes de botão e nenhuma documentação de uso. Cada time recriava padrões do zero." },
+          { type: "bullets", title: "Principais Achados", items: [
+            "42 versões diferentes de botão encontradas entre os 3 produtos",
+            "Nenhum componente tinha documentação de uso ou especificação técnica",
+            "30% do tempo de design era gasto em trabalho repetitivo — recriando componentes",
+            "Usuários percebiam interfaces diferentes para as mesmas ações entre produtos",
+          ]},
+          { type: "cards", title: "Categorias de Inconsistência", cards: [
+            { icon: "🎨", title: "Cores", desc: "34 tons de azul diferentes usados como 'cor primária' entre os produtos." },
+            { icon: "🔤", title: "Tipografia", desc: "3 famílias tipográficas diferentes, com 18 variações de tamanho sem padrão." },
+            { icon: "📐", title: "Espaçamento", desc: "Nenhum sistema de grid ou escala de espaçamento — valores arbitrários em cada tela." },
+          ]},
+        ],
+      },
+      {
+        label: "02. FUNDAÇÃO & TOKENS",
+        title: "Construindo a Base",
+        subtitle: "Definição de tokens semânticos como fundação do sistema — cores, tipografia, espaçamento e elevação.",
+        sections: [
+          { type: "text", title: "Design Tokens", text: "Optamos por uma abordagem token-first: toda decisão visual começa pelos tokens antes de qualquer componente. Definimos tokens primitivos (valores brutos) e semânticos (contextuais) para cor, tipografia, espaçamento e elevação." },
+          { type: "bullets", title: "Decisões Arquiteturais", items: [
+            "Tokens primitivos → semânticos: --blue-500 vira --color-action-primary",
+            "Escala tipográfica de 8 tamanhos cobrindo 100% dos casos de uso",
+            "Sistema de espaçamento em múltiplos de 4px (4, 8, 12, 16, 24, 32, 48, 64)",
+            "Figma como fonte da verdade com sincronização automática para código",
+          ]},
+          { type: "quote", text: "\"Quando você acerta os tokens, os componentes quase se constroem sozinhos.\" — Feedback do time de engenharia após adoção" },
+        ],
+      },
+      {
+        label: "03. COMPONENTIZAÇÃO & ADOÇÃO",
+        title: "Do Átomo ao Organismo",
+        subtitle: "42 componentes atômicos + 28 moleculares seguindo Atomic Design, com Storybook e governança.",
+        sections: [
+          { type: "text", title: "Atomic Design na Prática", text: "Seguimos Atomic Design para organizar a componentização: átomos (botão, input, badge), moléculas (campo de formulário, card), e organismos (header, sidebar). Cada componente foi documentado no Storybook com exemplos interativos e guias de uso." },
+          { type: "cards", title: "Processo de Adoção", cards: [
+            { icon: "📖", title: "Storybook", desc: "Exemplos interativos, todas as props documentadas e guias de quando usar (e quando não usar)." },
+            { icon: "🎓", title: "Workshop de 2 dias", desc: "Treinamento prático com todos os times de design e engenharia para onboarding no sistema." },
+            { icon: "☕", title: "Office Hours", desc: "Sessões semanais de suporte por 3 meses — cruciais para resolver dúvidas e resistências." },
+            { icon: "🗳️", title: "Processo RFC", desc: "Request for Component: qualquer membro pode propor novos componentes com critérios claros." },
+          ]},
+        ],
+      },
+    ],
   },
   {
     id: "Filtro Aqualis",
