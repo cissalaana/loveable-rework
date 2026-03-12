@@ -14,6 +14,7 @@ const isDarkColor = (hex: string) => {
 };
 
 const CaseStudyPage = () => {
+  const [zoomedImage, setZoomedImage] = useState<string | null>(null);
   useReveal();
   const { id } = useParams();
   const navigate = useNavigate();
