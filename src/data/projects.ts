@@ -73,15 +73,15 @@ export const PROJECTS: Project[] = [
     duration: "4 meses",
     team: "5 pessoas",
     overview: "A Guardiã é uma solução híbrida composta por um aplicativo móvel e um dispositivo vestível, um botão de pânico discreto que pode ser usado como pulseira, colar, choker ou fixado à capinha do celular. O sistema permite que usuárias acionem ajuda de forma rápida, discreta e sem depender do celular. Projeto desenvolvido na disciplina de Design de Interfaces Ubíquas (UFPE), alinhado com a ODS 5 da ONU.",
-    problem: "Mulheres que circulam pelo campus da UFPE enfrentam diariamente situações de insegurança, especialmente em áreas com pouca iluminação e baixa movimentação. 85,1% das estudantes não se sentem seguras com as medidas existentes, e 50% das situações de vulnerabilidade acontecem fora dos centros — em caminhos e áreas de transição entre prédios.",
-    solution: "Criamos uma solução híbrida com dispositivo vestível (botão de pânico com duplo clique ou comando de voz) e app com rotas compartilhadas em tempo real, mapa de segurança coletivo, rotas recomendadas baseadas em dados de ocorrências e botão de emergência que notifica seguranças próximos com localização em tempo real.",
+    problem: "Com base na problemática apresentada pela ODS 5 da ONU, que aborda a necessidade de promover a igualdade de gênero e enfrentar as diferentes formas de violência e discriminação contra mulheres, analisamos o contexto do campus da UFPE. Mulheres que circulam pela universidade enfrentam frequentemente situações de insegurança, especialmente em locais com pouca iluminação e baixo fluxo de pessoas. Dados indicam que 85,1% das estudantes não se sentem seguras com as medidas atuais, e cerca de 50% das situações de vulnerabilidade ocorrem fora das áreas centrais, em caminhos e zonas de transição entre prédios.",
+    solution: "Criamos uma solução híbrida com um dispositivo vestível, um botão de pânico acionado por duplo clique ou comando de voz, integrado a um aplicativo com rotas compartilhadas em tempo real, mapa colaborativo de segurança e sugestões de trajetos baseadas em dados de ocorrências. Assim, mulheres podem pedir ajuda em menos de dois segundos, mesmo sem acessar o celular, agilizando o acionamento da segurança do campus e aumentando a sensação de segurança nos deslocamentos.",
     process: [
-      { step: "01", title: "Pesquisa", desc: "Questionário com 74 respondentes investigando perfil, locomoção, percepção de segurança e satisfação com medidas existentes no campus.", icon: "🔍" },
-      { step: "02", title: "Definição", desc: "Criação de persona principal (Maria Cecília) e 3 personas secundárias do ecossistema. Mapeamento da jornada com momentos críticos de insegurança.", icon: "🗺️" },
-      { step: "03", title: "Ideação", desc: "Brainstorming, Crazy 8s e análise de similares. Priorização de funcionalidades em alta e média prioridade.", icon: "💡" },
-      { step: "04", title: "Design Ubíquo", desc: "Aplicação dos princípios de UUI: desatenção, fluxo cognitivo, sem modelo, medo de interação e padrões de uso.", icon: "🌐" },
-      { step: "05", title: "Prototipagem", desc: "Protótipo de alta fidelidade no Figma com fluxos completos e protótipo conceitual do dispositivo físico em Blender.", icon: "🎨" },
-      { step: "06", title: "Identidade Visual", desc: "Marca Guardiã com logo (mão + chama), paleta quente com fundo creme acolhedor e tom de voz direto, humano e encorajador.", icon: "✨" },
+      { step: "01", title: "Escolha da ODS e Missões", desc: "Realizamos uma pesquisa sobre os Objetivos de Desenvolvimento Sustentável (ODS) da ONU a partir de uma excursão promovida pela UFPE. Durante esse processo, escolhemos trabalhar com a ODS 5 – Igualdade de Gênero. A partir dela, selecionamos três objetivos para explorar soluções utilizando tecnologia ubíqua.", icon: "🔍" },
+      { step: "02", title: "Pesquisa", desc: "Com base no contexto selecionado, realizamos uma desk research e planejamos uma pesquisa quantitativa e qualitativa aplicada no campus da UFPE para compreender melhor como as mulheres percebem a segurança no local. Também realizamos benchmarking com soluções semelhantes para identificar referências e oportunidades.", icon: "🗺️" },
+      { step: "03", title: "Definição", desc: "A partir dos resultados, definimos as necessidades e oportunidades para o desenvolvimento da solução construindo com base na análise de dados um mapa de calor do campus. Desenvolvimento da Persona e Protopersonas e Jornada do usuário. ", icon: "💡" },
+      { step: "04", title: "Ideação", desc: "Brainstorming de Funcionalidades para o Produto Físico e Digital; Construção do Fluxograma do Aplicativo; Demonstração Relâmpago de Similares; ", icon: "🌐" },
+      { step: "05", title: "Protótipo Físico e Digital", desc: "Protótipo de baixa, média e alta fidelidade no Figma com fluxos completos e protótipo conceitual do dispositivo físico em Blender. Desenvolvimento da Identidade visual Guardiã", icon: "🎨" },
+      { step: "06", title: "Entrega", desc: "Desenvolvimento de uma História do Usuário para o Pitch. Impressão 3D de Protótipo. Documentação e Handoff para professor", icon: "✨" },
     ],
     metrics: [
       { value: "74", label: "Respondentes na pesquisa", sub: "estudantes de diferentes cursos" },
@@ -121,19 +121,19 @@ export const PROJECTS: Project[] = [
     ],
     sprints: [
       {
-        label: "01. DISCOVERY",
+        label: "01. Escolha da ODS e Missões",
         title: "Entendendo o Problema",
-        subtitle: "Neste sprint, mergulhamos na realidade das estudantes da UFPE para entender suas experiências de segurança no campus.",
+        subtitle: "Nesta etapa, realizamos uma excursão pela UFPE para identificar potenciais problemas em sua organização e arquitetura que pudessem ser contemplados por um dos Objetivos de Desenvolvimento Sustentável (ODS). Durante a atividade, conduzida pelo professor Rafael Rattes, observamos diferentes áreas do campus e identificamos diversos locais com baixa iluminação e pouco monitoramento de segurança. Esses espaços também estão associados a relatos recorrentes de ocorrências que afetam a segurança das mulheres, o que despertou o interesse da equipe em investigar mais profundamente essa problemática.                ",
         sections: [
-          { type: "text", title: "UX Outcomes", text: "Realizamos uma pesquisa quantitativa com 74 respondentes e entrevistas qualitativas para mapear a percepção de segurança, rotinas de deslocamento e pontos críticos do campus. O objetivo era construir um Business Case sólido baseado em dados reais." },
-          { type: "bullets", title: "Key Insights", items: [
+          { type: "text", title: "Escolha da ODS", text: "A partir dessa observação inicial, decidimos direcionar o projeto para a ODS 5 - Igualdade de Gênero, selecionando como norteadores os objetivos 5.1, 5.2 e 5.5. Esses objetivos se relacionam diretamente com a proposta do projeto, que busca contribuir para a redução da sensação de insegurança no campus, promover maior presença e participação das mulheres nos espaços universitários e diminuir os riscos enfrentados diariamente por meio de uma solução que integra produto digital e físico." },
+          { type: "bullets", title: "Missões", items: [
             "85,1% das estudantes não se sentem seguras com as medidas existentes no campus",
             "50% das situações de vulnerabilidade acontecem fora dos centros acadêmicos — em caminhos e áreas de transição",
             "97,3% se locomovem a pé dentro do campus, tornando essencial uma solução para pedestres",
             "47,3% não se sentem à vontade para denunciar casos de assédio ou violência",
             "CFCH foi apontado por 43,2% como o local menos seguro do campus",
           ]},
-          { type: "image", image: "/assets/MockupGuardiã.png", imageCaption: "Mapeamento inicial de áreas críticas do campus UFPE" },
+          { type: "image", image: "/assets/AreaGuardia.jpg", imageCaption: "Mapeamento inicial de áreas críticas do campus UFPE" },
           { type: "cards", title: "Hipóteses Iniciais", cards: [
             { icon: "⚡", title: "Acionamento rápido", desc: "Usuárias precisam de uma forma de pedir ajuda em menos de 2 segundos, sem depender do celular." },
             { icon: "📍", title: "Localização em tempo real", desc: "Seguranças precisam receber a localização exata da estudante no momento do acionamento." },
