@@ -11,6 +11,23 @@ export interface Metric {
   sub: string;
 }
 
+export interface SprintContent {
+  type: "text" | "bullets" | "image" | "cards" | "quote";
+  title?: string;
+  text?: string;
+  items?: string[];
+  image?: string;
+  imageCaption?: string;
+  cards?: { icon?: string; title: string; desc: string }[];
+}
+
+export interface Sprint {
+  label: string;
+  title: string;
+  subtitle?: string;
+  sections: SprintContent[];
+}
+
 export interface Project {
   id: string;
   title: string;
@@ -38,6 +55,7 @@ export interface Project {
   designPrinciples?: { title: string; desc: string }[];
   learnings?: string[];
   featuredImage?: string;
+  sprints?: Sprint[];
 }
 
 export const PROJECTS: Project[] = [
@@ -100,6 +118,62 @@ export const PROJECTS: Project[] = [
       "Produtos de segurança precisam funcionar mesmo sob estresse — cada clique a mais é um clique que ela pode não conseguir dar.",
       "Design ubíquo não é sobre tecnologia invisível — é sobre tecnologia que respeita o contexto de quem usa.",
       "Este foi meu primeiro projeto com foco em design de sistemas ubíquos, ampliando minha visão sobre como tecnologia pode se integrar ao cotidiano.",
+    ],
+    sprints: [
+      {
+        label: "01. DISCOVERY",
+        title: "Entendendo o Problema",
+        subtitle: "Neste sprint, mergulhamos na realidade das estudantes da UFPE para entender suas experiências de segurança no campus.",
+        sections: [
+          { type: "text", title: "UX Outcomes", text: "Realizamos uma pesquisa quantitativa com 74 respondentes e entrevistas qualitativas para mapear a percepção de segurança, rotinas de deslocamento e pontos críticos do campus. O objetivo era construir um Business Case sólido baseado em dados reais." },
+          { type: "bullets", title: "Key Insights", items: [
+            "85,1% das estudantes não se sentem seguras com as medidas existentes no campus",
+            "50% das situações de vulnerabilidade acontecem fora dos centros acadêmicos — em caminhos e áreas de transição",
+            "97,3% se locomovem a pé dentro do campus, tornando essencial uma solução para pedestres",
+            "47,3% não se sentem à vontade para denunciar casos de assédio ou violência",
+            "CFCH foi apontado por 43,2% como o local menos seguro do campus",
+          ]},
+          { type: "image", image: "/assets/MockupGuardiã.png", imageCaption: "Mapeamento inicial de áreas críticas do campus UFPE" },
+          { type: "cards", title: "Hipóteses Iniciais", cards: [
+            { icon: "⚡", title: "Acionamento rápido", desc: "Usuárias precisam de uma forma de pedir ajuda em menos de 2 segundos, sem depender do celular." },
+            { icon: "📍", title: "Localização em tempo real", desc: "Seguranças precisam receber a localização exata da estudante no momento do acionamento." },
+            { icon: "🗺️", title: "Rotas seguras", desc: "Estudantes precisam de sugestões de rotas baseadas em dados reais de ocorrências no campus." },
+            { icon: "👥", title: "Rede de apoio", desc: "Compartilhar localização com contatos de confiança aumenta a sensação de segurança." },
+          ]},
+        ],
+      },
+      {
+        label: "02. DEFINIÇÃO",
+        title: "Mapeando o Ecossistema",
+        subtitle: "Definimos personas, jornadas e os princípios de design ubíquo que guiariam toda a solução.",
+        sections: [
+          { type: "text", title: "Personas & Jornada", text: "Criamos a persona principal Maria Cecília (21 anos, estudante de Psicologia) e 3 personas secundárias do ecossistema: o segurança Erandir, o coordenador Márcio e o técnico de câmeras Luiz. Mapeamos a jornada completa com momentos críticos de insegurança." },
+          { type: "bullets", title: "Princípios de Design Ubíquo (UUI)", items: [
+            "Desatenção — o dispositivo funciona independente, sem precisar desbloquear o celular",
+            "Fluxo cognitivo — interações mínimas para manter o foco no ambiente",
+            "Sem modelo — acionamento por voz ou toque, sem navegar menus",
+            "Medo de interação — duplo clique evita acionamentos acidentais",
+            "Padrões — o app aprende com o histórico de rotas da usuária",
+          ]},
+          { type: "image", image: "/assets/MockupGuardiã1.png", imageCaption: "Mapeamento de jornada da persona Maria Cecília" },
+        ],
+      },
+      {
+        label: "03. IDEAÇÃO & DESIGN",
+        title: "Da Ideia ao Protótipo",
+        subtitle: "Exploramos soluções através de brainstorming e Crazy 8s, convergindo para uma solução híbrida app + dispositivo vestível.",
+        sections: [
+          { type: "text", title: "Processo Criativo", text: "Utilizamos Brainstorming e Crazy 8s para gerar ideias, seguido de análise de similares no mercado. A priorização de funcionalidades revelou que a solução precisava ser híbrida: um app móvel complementado por um dispositivo físico vestível para situações onde acessar o celular não é possível." },
+          { type: "cards", title: "Funcionalidades Priorizadas", cards: [
+            { icon: "🔴", title: "Botão de Pânico", desc: "Duplo clique no dispositivo vestível aciona emergência silenciosamente em menos de 2 segundos." },
+            { icon: "🎤", title: "Comando de Voz", desc: "Alternativa ao toque: a palavra-chave 'Guardiã' ativa o modo emergência por voz." },
+            { icon: "📡", title: "Rota Compartilhada", desc: "Compartilhamento em tempo real da localização com contatos de confiança durante deslocamentos." },
+            { icon: "🔥", title: "Mapa de Calor", desc: "Mapa colaborativo de segurança alimentado por dados de ocorrências e avaliações das estudantes." },
+          ]},
+          { type: "image", image: "/assets/MockupGuardiã3.png", imageCaption: "Protótipo de alta fidelidade — telas principais do app Guardiã" },
+          { type: "quote", text: "\"O dispositivo pode ser usado como pulseira, colar, choker ou fixado à capinha do celular — a discrição é parte fundamental da segurança.\"" },
+        ],
+      },
     ],
   },
   {
