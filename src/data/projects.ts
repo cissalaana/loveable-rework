@@ -11,6 +11,23 @@ export interface Metric {
   sub: string;
 }
 
+export interface SprintContent {
+  type: "text" | "bullets" | "image" | "cards" | "quote";
+  title?: string;
+  text?: string;
+  items?: string[];
+  image?: string;
+  imageCaption?: string;
+  cards?: { icon?: string; title: string; desc: string }[];
+}
+
+export interface Sprint {
+  label: string;
+  title: string;
+  subtitle?: string;
+  sections: SprintContent[];
+}
+
 export interface Project {
   id: string;
   title: string;
@@ -38,6 +55,7 @@ export interface Project {
   designPrinciples?: { title: string; desc: string }[];
   learnings?: string[];
   featuredImage?: string;
+  sprints?: Sprint[];
 }
 
 export const PROJECTS: Project[] = [
