@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useReveal } from "@/hooks/useReveal";
 import { PROJECTS } from "@/data/projects";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 
 // Returns true if a hex color is dark
 const isDarkColor = (hex: string) => {
