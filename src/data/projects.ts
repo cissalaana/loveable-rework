@@ -299,7 +299,7 @@ export const PROJECTS: Project[] = [
       {
         label: "01. IMERSÃO",
         title: "Mergulhando no Universo Cinéfilo",
-        subtitle: "Shadowing de 2 semanas com gestores escolares e entrevistas semiestruturadas para mapear comportamentos reais.",
+        subtitle: "Shadowing de 2 semanas com 8 gestores escolares e entrevistas semiestruturadas para mapear comportamentos reais.",
         sections: [
           { type: "text", title: "Contexto da Pesquisa", text: "Acompanhamos 8 gestores escolares em seu ambiente de trabalho durante 2 semanas, observando como tomavam decisões, quais ferramentas usavam e onde estavam os maiores gargalos no fluxo de trabalho diário." },
           { type: "bullets", title: "Descobertas do Shadowing", items: [
@@ -316,11 +316,11 @@ export const PROJECTS: Project[] = [
         ],
       },
       {
-        label: "02. DEFINIÇÃO & ARQUITETURA",
+        label: "02. DEFINIÇÃO",
         title: "Organizando a Complexidade",
-        subtitle: "Workshop de priorização com MoSCoW e card sorting para definir hierarquia de informação.",
+        subtitle: "Workshop de priorização com MoSCoW para identificar os 12 indicadores mais críticos e definir o escopo do produto.",
         sections: [
-          { type: "text", title: "Priorização com MoSCoW", text: "Realizamos um workshop com gestores, coordenadores e analistas da secretaria para priorizar os 12 indicadores mais críticos usando a técnica MoSCoW. O card sorting com usuários reais reorganizou completamente a hierarquia que havíamos planejado inicialmente." },
+          { type: "text", title: "Priorização com MoSCoW", text: "Realizamos um workshop com gestores, coordenadores e analistas da secretaria para priorizar os 12 indicadores mais críticos usando a técnica MoSCoW. A participação ativa dos stakeholders garantiu alinhamento entre necessidades reais e viabilidade técnica." },
           { type: "bullets", title: "Indicadores Priorizados (Must Have)", items: [
             "Taxa de frequência diária por turma com alertas de queda",
             "Desempenho médio por disciplina com comparativo histórico",
@@ -331,23 +331,80 @@ export const PROJECTS: Project[] = [
         ],
       },
       {
-        label: "03. VISUALIZAÇÃO & TESTES",
-        title: "Testando com Quem Usa",
-        subtitle: "Exploração de 6 modelos de chart e testes A/B com 40 gestores de diferentes perfis.",
+        label: "03. ARQUITETURA",
+        title: "Estruturando a Informação",
+        subtitle: "Criação da arquitetura de informação e hierarquia de dados com card sorting e participação de usuários reais.",
         sections: [
-          { type: "text", title: "Processo de Validação", text: "Testamos 6 modelos de visualização diferentes com gestores reais. Os testes A/B entre 2 versões finais do dashboard envolveram 40 gestores de diferentes perfis de letramento digital, revelando que simplicidade vence sofisticação visual em todos os perfis." },
+          { type: "text", title: "Card Sorting com Gestores", text: "Conduzimos sessões de card sorting abertas e fechadas com 12 gestores de diferentes perfis para entender como organizam mentalmente os indicadores educacionais. O resultado reorganizou completamente a hierarquia de informação que havíamos planejado inicialmente." },
+          { type: "bullets", title: "Decisões de Arquitetura", items: [
+            "Dashboard principal com visão resumida dos 4 indicadores críticos (Must Have)",
+            "Drill-down progressivo: resumo → detalhes → dados brutos em 3 níveis",
+            "Navegação por escola, turma e aluno para diferentes granularidades",
+            "Área de alertas com priorização automática por severidade",
+          ]},
+          { type: "cards", title: "Padrões de Organização Mental", cards: [
+            { icon: "📅", title: "Temporal", desc: "Gestores pensam em dados por período — dia, semana, mês e semestre são as unidades naturais." },
+            { icon: "👥", title: "Por turma", desc: "A turma é a unidade base de gestão — não o aluno individual nem a escola como um todo." },
+            { icon: "🚨", title: "Por urgência", desc: "Gestores querem ver primeiro o que precisa de ação imediata, depois o contexto completo." },
+          ]},
+        ],
+      },
+      {
+        label: "04. VISUALIZAÇÃO",
+        title: "Testando Modelos Visuais",
+        subtitle: "Exploração de 6 modelos de chart diferentes testados com gestores reais para encontrar a visualização ideal.",
+        sections: [
+          { type: "text", title: "Experimentação Visual", text: "Testamos 6 modelos de visualização diferentes — de gráficos de barras tradicionais a treemaps e sparklines — com gestores reais. O objetivo era encontrar o equilíbrio entre riqueza informacional e facilidade de interpretação para públicos com diferentes níveis de letramento digital." },
+          { type: "cards", title: "Modelos Testados", cards: [
+            { icon: "📊", title: "Barras + Cards", desc: "Cards com número grande + barra de progresso simples. Preferido por 67% dos gestores com baixo letramento digital." },
+            { icon: "📈", title: "Line charts", desc: "Gráficos de linha para tendências temporais. Útil para gestores experientes, confuso para iniciantes." },
+            { icon: "🔥", title: "Heatmaps", desc: "Mapas de calor para visão comparativa entre turmas. Intuitivo para todos os perfis." },
+            { icon: "🎯", title: "Gauges", desc: "Medidores circulares para metas. Visualmente atraentes mas pouco informativos em escala." },
+          ]},
+          { type: "bullets", title: "Conclusões dos Testes", items: [
+            "Cards com números grandes foram preferidos universalmente como primeira camada de informação",
+            "Line charts funcionam bem como segunda camada (drill-down) para gestores intermediários",
+            "Heatmaps são ideais para comparação entre turmas — intuitivos para todos os perfis",
+            "Cores semafóricas (verde/amarelo/vermelho) são o código visual mais compreendido",
+          ]},
+        ],
+      },
+      {
+        label: "05. VALIDAÇÃO",
+        title: "Testando com Quem Usa",
+        subtitle: "Testes A/B entre 2 versões do dashboard com 40 gestores de diferentes perfis de letramento digital.",
+        sections: [
+          { type: "text", title: "Processo de Validação", text: "Conduzimos testes A/B rigorosos entre 2 versões finais do dashboard envolvendo 40 gestores de diferentes perfis. A versão A priorizava gráficos interativos; a versão B priorizava cards com números grandes e alertas. Os resultados foram claros: simplicidade vence sofisticação visual em todos os perfis." },
           { type: "cards", title: "Resultados dos Testes A/B", cards: [
             { icon: "✅", title: "Versão simplificada", desc: "73% dos gestores completaram tarefas mais rápido com a versão de cards simples vs. gráficos complexos." },
             { icon: "♿", title: "Acessibilidade", desc: "Modo de alto contraste e suporte daltônico testados com 8 gestores com necessidades visuais específicas." },
             { icon: "⚡", title: "Time-to-insight", desc: "Tempo médio para encontrar uma informação crítica caiu de 3 minutos para 18 segundos." },
             { icon: "📤", title: "Exportação", desc: "Relatórios que levavam 45 min em planilha agora são gerados em 1 clique — testado e validado." },
           ]},
+          { type: "quote", text: "\"Finalmente eu consigo ver tudo o que preciso numa tela só, sem ter que abrir 4 planilhas diferentes.\" — Gestora participante do teste" },
+        ],
+      },
+      {
+        label: "06. ESCALA",
+        title: "Preparando para o Mundo Real",
+        subtitle: "Design system adaptado para alta contraste e modo daltônico, com handoff completo para o time de engenharia.",
+        sections: [
+          { type: "text", title: "Design System Acessível", text: "Criamos um design system completo adaptado para as necessidades do público-alvo: alto contraste para ambientes com iluminação variada, modo daltônico com padrões texturais além de cores, e tipografia ampliada para gestores com necessidades visuais." },
+          { type: "bullets", title: "Entregas para Engenharia", items: [
+            "Design system completo com tokens de cor, tipografia e espaçamento",
+            "Componentes documentados com estados, variantes e guias de uso",
+            "Protótipo interativo no Figma com todos os fluxos e edge cases",
+            "Especificações de acessibilidade: WCAG 2.1 AA em todas as telas",
+            "Guia de responsividade para adaptação mobile e tablet",
+          ]},
+          { type: "cards", title: "Impacto do Piloto", cards: [
+            { icon: "🏫", title: "340 escolas", desc: "Piloto implementado em 340 escolas públicas no primeiro ano de operação." },
+            { icon: "⏱️", title: "–40% tempo de decisão", desc: "Tempo médio de decisão caiu de 3 dias para 1,8 dia com dados em tempo real." },
+            { icon: "📊", title: "NPS 71", desc: "Satisfação dos gestores saltou de NPS 42 para 71 após implementação." },
+          ]},
         ],
       },
     ],
-  },
-  {
-    id: "Redesign Craigslist",
     title: "Redesign Craigslist",
     subtitle: "Redesign completo do site de classificados mais icônico da internet, focado em usabilidade e modernização visual",
     desc: "Baseado em pesquisa de usuário e análise de dados, o projeto resultou em uma experiência mais intuitiva e eficiente para os usuários.",
