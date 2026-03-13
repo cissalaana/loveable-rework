@@ -127,6 +127,11 @@ export const PROJECTS: Project[] = [
         subtitle: "Nesta etapa, realizamos uma excursão pela UFPE para identificar potenciais problemas em sua organização e arquitetura que pudessem ser contemplados por um dos Objetivos de Desenvolvimento Sustentável (ODS). Durante a atividade, conduzida pelo professor Rafael Rattes, observamos diferentes áreas do campus e identificamos diversos locais com baixa iluminação e pouco monitoramento de segurança. Esses espaços também estão associados a relatos recorrentes de ocorrências que afetam a segurança das mulheres, o que despertou o interesse da equipe em investigar mais profundamente essa problemática.                ",
         sections: [
           { type: "text", title: "Escolha da ODS", text: "A partir dessa observação inicial, decidimos direcionar o projeto para a ODS 5 - Igualdade de Gênero, selecionando como norteadores os objetivos 5.1, 5.2 e 5.5. Esses objetivos se relacionam diretamente com a proposta do projeto, que busca contribuir para a redução da sensação de insegurança no campus, promover maior presença e participação das mulheres nos espaços universitários e diminuir os riscos enfrentados diariamente por meio de uma solução que integra produto digital e físico." },
+          { type: "images", title: "Registro da Excursão", images: [
+            { src: "/assets/AreaGuardia.jpg", caption: "Área do campus com baixa iluminação identificada durante a excursão" },
+            { src: "/assets/AreaGuardia2.jpeg", caption: "Mapeamento de áreas críticas do campus UFPE" },
+          ]},
+          { type: "text", title: "Método Tiles IoT Toolkit", text: "Para definir as missões do projeto e construir a protopersona, utilizamos o Tiles IoT Toolkit — um kit de cartas de design voltado para a criação de soluções que envolvem Internet das Coisas. O toolkit nos auxiliou a mapear de forma estruturada os elementos-chave da solução: quem são os usuários, quais são seus comportamentos, em que contextos interagem com o ambiente e quais tecnologias poderiam ser aplicadas. Com base nessas combinações, formulamos as missões que guiariam o desenvolvimento do projeto e construímos uma protopersona inicial, sintetizando as principais necessidades e dores identificadas durante a excursão e a pesquisa preliminar." },
           { type: "bullets", title: "Missões", items: [
             "85,1% das estudantes não se sentem seguras com as medidas existentes no campus",
             "50% das situações de vulnerabilidade acontecem fora dos centros acadêmicos — em caminhos e áreas de transição",
@@ -134,7 +139,6 @@ export const PROJECTS: Project[] = [
             "47,3% não se sentem à vontade para denunciar casos de assédio ou violência",
             "CFCH foi apontado por 43,2% como o local menos seguro do campus",
           ]},
-          { type: "image", image: "/assets/AreaGuardia.jpg", imageCaption: "Mapeamento inicial de áreas críticas do campus UFPE" },
           { type: "cards", title: "Hipóteses Iniciais", cards: [
             { icon: "⚡", title: "Acionamento rápido", desc: "Usuárias precisam de uma forma de pedir ajuda em menos de 2 segundos, sem depender do celular." },
             { icon: "📍", title: "Localização em tempo real", desc: "Seguranças precisam receber a localização exata da estudante no momento do acionamento." },

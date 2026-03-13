@@ -296,6 +296,36 @@ const CaseStudyPage = () => {
                   );
                 }
 
+                if (section.type === "images") {
+                  return (
+                    <div key={secIdx} className="reveal">
+                      {section.title && (
+                        <h3 className="font-display text-[1.2rem] font-semibold text-foreground mb-5">{section.title}</h3>
+                      )}
+                      <div style={{ display: "grid", gridTemplateColumns: section.images && section.images.length > 1 ? "1fr 1fr" : "1fr", gap: 16 }}>
+                        {section.images?.map((img, imgIdx) => (
+                          <div key={imgIdx} style={{ borderRadius: 16, overflow: "hidden", cursor: "zoom-in" }} onClick={() => setZoomedImage(img.src)}>
+                            <img
+                              src={img.src}
+                              alt={img.caption || `Imagem ${imgIdx + 1}`}
+                              style={{
+                                width: "100%", height: 320,
+                                objectFit: "cover", display: "block", borderRadius: 16,
+                              }}
+                              loading="lazy"
+                            />
+                            {img.caption && (
+                              <p className="font-body text-[0.78rem] font-light mt-2 text-center" style={{ color: "#9A8A82" }}>
+                                {img.caption}
+                              </p>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                }
+
                 if (section.type === "cards") {
                   return (
                     <div key={secIdx} className="reveal">
