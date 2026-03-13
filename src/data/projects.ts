@@ -405,6 +405,9 @@ export const PROJECTS: Project[] = [
         ],
       },
     ],
+  },
+  {
+    id: "Redesign Craigslist",
     title: "Redesign Craigslist",
     subtitle: "Redesign completo do site de classificados mais icônico da internet, focado em usabilidade e modernização visual",
     desc: "Baseado em pesquisa de usuário e análise de dados, o projeto resultou em uma experiência mais intuitiva e eficiente para os usuários.",
