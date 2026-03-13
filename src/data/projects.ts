@@ -652,34 +652,88 @@ export const PROJECTS: Project[] = [
         ],
       },
       {
-        label: "02. ANÁLISE DE FUNIL & IDEAÇÃO",
+        label: "02. ANÁLISE DE FUNIL",
         title: "Onde o Abandono Acontece",
-        subtitle: "Mapeamento de drop-off com Hotjar e Google Analytics combinado com sessões de ideação.",
+        subtitle: "Mapeamento de drop-off com Hotjar e Google Analytics para identificar os gargalos do funil de conversão.",
         sections: [
-          { type: "text", title: "O Funil Quebrado", text: "A análise de funil revelou que 78% do abandono acontecia no step de escolha de causa — o paradoxo da escolha em ação. Com How Might We e Crazy 8s, geramos 3 conceitos que foram prototipados rapidamente para teste." },
+          { type: "text", title: "O Funil Quebrado", text: "A análise de funil revelou que 78% do abandono acontecia no step de escolha de causa — o paradoxo da escolha em ação. Complementamos os dados quantitativos com gravações de sessões no Hotjar para entender o comportamento real dos usuários na tela de escolha." },
+          { type: "bullets", title: "Dados do Funil", items: [
+            "Cadastro → Perfil completo: 64% de conversão (ok)",
+            "Perfil → Escolha de causa: apenas 22% de conversão (gargalo crítico)",
+            "Escolha de causa → Primeira ação: 89% de conversão (ok após a escolha)",
+            "Tempo médio na tela de escolha: 8 minutos (vs. 2 min em telas anteriores)",
+          ]},
+          { type: "cards", title: "Padrões Observados no Hotjar", cards: [
+            { icon: "🔄", title: "Scroll infinito", desc: "Usuários rolavam a lista de causas várias vezes sem clicar — paralisados pela quantidade de opções." },
+            { icon: "↩️", title: "Volta ao início", desc: "34% dos usuários voltavam ao topo da lista após rolar até o final — sinal claro de indecisão." },
+            { icon: "❌", title: "Abandono silencioso", desc: "A maioria saía sem interagir com nenhuma causa — simplesmente fechavam o app." },
+          ]},
+        ],
+      },
+      {
+        label: "03. IDEAÇÃO",
+        title: "Gerando Soluções Criativas",
+        subtitle: "How Might We + Crazy 8s com stakeholders para gerar conceitos que resolvam o paradoxo da escolha.",
+        sections: [
+          { type: "text", title: "Sessão de Ideação", text: "Reunimos o time de produto, coordenadores de voluntariado e representantes das ONGs parceiras para uma sessão de ideação estruturada. Usamos How Might We para reframing do problema e Crazy 8s para gerar soluções rapidamente." },
           { type: "cards", title: "3 Conceitos Prototipados", cards: [
             { icon: "🎯", title: "Match por quiz", desc: "5 perguntas rápidas para sugerir causas compatíveis com perfil, habilidades e disponibilidade." },
             { icon: "🎮", title: "Jornada gamificada", desc: "Progresso visual com badges, streaks e impacto acumulado para manter engajamento." },
             { icon: "👥", title: "Onboarding social", desc: "Ver o que amigos apoiam e começar por causas validadas pela rede de confiança." },
           ]},
+          { type: "quote", text: "\"E se ao invés de mostrar 200 causas, perguntássemos 5 coisas e mostrássemos 3 causas perfeitas?\" — Insight da sessão de How Might We" },
+        ],
+      },
+      {
+        label: "04. TESTE DE CONCEITO",
+        title: "Validando com Usuários Reais",
+        subtitle: "Testes de usabilidade com 15 usuários por conceito para identificar a solução mais promissora.",
+        sections: [
+          { type: "text", title: "Protocolo de Testes", text: "Testamos os 3 conceitos prototipados com 15 usuários cada, incluindo representantes dos 3 perfis identificados na pesquisa (ativos, inativos e nunca-ativados). Cada sessão incluiu tarefas específicas, think-aloud protocol e questionário pós-teste." },
           { type: "bullets", title: "Resultado dos Testes de Conceito", items: [
-            "Conceito 2 (Match + Gamification) venceu com 87% de preferência em testes com 15 usuários",
+            "Conceito 2 (Match + Gamification) venceu com 87% de preferência geral",
             "Quiz de 5 perguntas reduziu tempo de match de 8min para 2min no protótipo",
             "Elemento social foi incorporado como feature secundária ao conceito vencedor",
+            "Nunca-ativados tiveram a maior melhora: 0% → 73% de conclusão da primeira ação no protótipo",
+          ]},
+          { type: "cards", title: "Feedback por Perfil", cards: [
+            { icon: "🟢", title: "Ativos", desc: "Adoraram o sistema de progresso e badges — 'finalmente vou poder ver meu impacto acumulado'." },
+            { icon: "🟡", title: "Inativos", desc: "O filtro por disponibilidade resolveu a principal barreira — 'agora sim consigo encaixar na rotina'." },
+            { icon: "🔴", title: "Nunca-ativados", desc: "O quiz eliminou a paralisia de escolha — 'em 2 minutos já tinha uma causa que faz sentido pra mim'." },
           ]},
         ],
       },
       {
-        label: "03. REFINAMENTO & LANÇAMENTO",
-        title: "Iteração Baseada em Dados",
-        subtitle: "2 rodadas de iteração e roll-out gradual para 20% → 50% → 100% da base.",
+        label: "05. REFINAMENTO",
+        title: "Iteração com Propósito",
+        subtitle: "2 rodadas de iteração baseadas nos feedbacks, com foco em clareza, confiança e momentum.",
         sections: [
-          { type: "text", title: "Iteração com Propósito", text: "Após os testes de conceito, realizamos 2 rodadas de refinamento focadas em clareza (simplificar textos), confiança (adicionar avaliações e métricas de impacto) e momentum (celebrar cada micro-ação do voluntário)." },
-          { type: "cards", title: "Features Finais", cards: [
+          { type: "text", title: "Foco nas 3 Dimensões", text: "Após os testes de conceito, realizamos 2 rodadas de refinamento focadas em três dimensões: clareza (simplificar textos e reduzir carga cognitiva), confiança (adicionar avaliações, depoimentos e métricas de impacto das ONGs) e momentum (celebrar cada micro-ação do voluntário para manter engajamento)." },
+          { type: "cards", title: "Features Refinadas", cards: [
             { icon: "🧠", title: "Match inteligente", desc: "Algoritmo conecta voluntário a causa com base em habilidades, localização e disponibilidade." },
             { icon: "🏅", title: "Sistema de progresso", desc: "Badges, streaks e impacto acumulado visível — cada ação pequena é celebrada." },
             { icon: "⭐", title: "Trust score", desc: "ONGs com avaliações, depoimentos e métricas de impacto para construir confiança." },
             { icon: "🔔", title: "Lembretes contextuais", desc: "Notificações baseadas na disponibilidade declarada, não em horários arbitrários." },
+          ]},
+          { type: "bullets", title: "Mudanças da Iteração 2", items: [
+            "Textos reduzidos em 40% — cada tela comunica uma ideia principal",
+            "Trust score das ONGs visível já no card de resultado do match",
+            "Animação de celebração após primeira ação concluída",
+            "Onboarding de 5 telas reduzido para 3 com informação progressiva",
+          ]},
+        ],
+      },
+      {
+        label: "06. LANÇAMENTO",
+        title: "Roll-out Gradual",
+        subtitle: "Lançamento progressivo para 20% → 50% → 100% da base com monitoramento em tempo real.",
+        sections: [
+          { type: "text", title: "Estratégia de Lançamento", text: "Optamos por um roll-out gradual em 3 fases para minimizar riscos: 20% da base por 2 semanas, depois 50% por mais 2 semanas, e finalmente 100%. Cada fase era monitorada em tempo real com dashboards de métricas-chave e canais de feedback direto com os usuários." },
+          { type: "cards", title: "Resultados Finais", cards: [
+            { icon: "📈", title: "+60% engajamento", desc: "Usuários ativos mensais cresceram 60% nos primeiros 90 dias após lançamento completo." },
+            { icon: "🎯", title: "12% → 31% ativação", desc: "Taxa de ativação (cadastro → primeira ação) mais que dobrou com o novo fluxo." },
+            { icon: "👥", title: "+3.2k voluntários", desc: "3.200 novos voluntários ativos nos primeiros 90 dias de operação." },
+            { icon: "⏱️", title: "–44% tempo de match", desc: "Tempo para encontrar uma causa compatível caiu de 8min para 4.5min." },
           ]},
           { type: "quote", text: "\"Pela primeira vez eu senti que o app entendeu o que eu quero e quando eu posso ajudar.\" — Voluntária durante beta test" },
         ],
