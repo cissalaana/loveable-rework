@@ -481,7 +481,7 @@ export const PROJECTS: Project[] = [
         ],
       },
       {
-        label: "02. FUNDAÇÃO & TOKENS",
+        label: "02. FUNDAÇÃO",
         title: "Construindo a Base",
         subtitle: "Definição de tokens semânticos como fundação do sistema — cores, tipografia, espaçamento e elevação.",
         sections: [
@@ -496,16 +496,83 @@ export const PROJECTS: Project[] = [
         ],
       },
       {
-        label: "03. COMPONENTIZAÇÃO & ADOÇÃO",
+        label: "03. COMPONENTIZAÇÃO",
         title: "Do Átomo ao Organismo",
-        subtitle: "42 componentes atômicos + 28 moleculares seguindo Atomic Design, com Storybook e governança.",
+        subtitle: "42 componentes atômicos + 28 moleculares seguindo Atomic Design com documentação completa.",
         sections: [
-          { type: "text", title: "Atomic Design na Prática", text: "Seguimos Atomic Design para organizar a componentização: átomos (botão, input, badge), moléculas (campo de formulário, card), e organismos (header, sidebar). Cada componente foi documentado no Storybook com exemplos interativos e guias de uso." },
+          { type: "text", title: "Atomic Design na Prática", text: "Seguimos Atomic Design para organizar a componentização: átomos (botão, input, badge), moléculas (campo de formulário, card), e organismos (header, sidebar). Cada componente foi construído com variants, estados e propriedades documentadas." },
+          { type: "cards", title: "Estrutura de Componentes", cards: [
+            { icon: "⚛️", title: "42 Átomos", desc: "Botões, inputs, badges, ícones, tooltips — os blocos fundamentais do sistema." },
+            { icon: "🧬", title: "28 Moléculas", desc: "Cards, campos de formulário, menus — combinações de átomos com lógica própria." },
+            { icon: "🏗️", title: "12 Organismos", desc: "Headers, sidebars, modais — componentes complexos compostos por moléculas." },
+          ]},
+          { type: "bullets", title: "Critérios de Componentização", items: [
+            "Cada componente deve ser usado em pelo menos 2 dos 3 produtos para justificar sua inclusão",
+            "Variants cobrem todos os estados: default, hover, active, disabled, error, loading",
+            "Props documentadas com tipos TypeScript e valores padrão",
+            "Exemplos de uso correto e incorreto para cada componente",
+          ]},
+        ],
+      },
+      {
+        label: "04. DOCUMENTAÇÃO",
+        title: "Tornando o Sistema Vivo",
+        subtitle: "Storybook com exemplos interativos, props documentadas e guias de uso para cada componente.",
+        sections: [
+          { type: "text", title: "Storybook como Hub Central", text: "Implementamos o Storybook como hub central de documentação do design system. Cada componente tem sua própria página com exemplos interativos, todas as props documentadas, guias de quando usar (e quando não usar), e código pronto para copiar." },
+          { type: "bullets", title: "Estrutura da Documentação", items: [
+            "Overview com propósito e contexto de uso do componente",
+            "Playground interativo com todas as props ajustáveis",
+            "Tabela de props com tipos, valores padrão e descrições",
+            "Exemplos de composição: como combinar com outros componentes",
+            "Do's and Don'ts visuais para cada componente",
+            "Changelog com histórico de mudanças e versões",
+          ]},
+          { type: "cards", title: "Métricas da Documentação", cards: [
+            { icon: "📖", title: "70 páginas", desc: "Documentação completa cobrindo todos os componentes, tokens e padrões do sistema." },
+            { icon: "🎮", title: "42 playgrounds", desc: "Cada componente atômico tem um playground interativo para experimentação." },
+            { icon: "✅", title: "100% tipado", desc: "Todas as props com TypeScript — erros de uso são capturados em tempo de desenvolvimento." },
+          ]},
+        ],
+      },
+      {
+        label: "05. ADOÇÃO",
+        title: "Conquistando os Times",
+        subtitle: "Workshop de 2 dias com times de design e engenharia, seguido de office hours semanais por 3 meses.",
+        sections: [
+          { type: "text", title: "Estratégia de Adoção", text: "A adoção foi o maior desafio do projeto. Cada time tinha seus próprios componentes e resistência natural a mudanças. Planejamos uma estratégia em 3 fases: Workshop de onboarding → Office Hours semanais → Champions internos em cada time." },
           { type: "cards", title: "Processo de Adoção", cards: [
-            { icon: "📖", title: "Storybook", desc: "Exemplos interativos, todas as props documentadas e guias de quando usar (e quando não usar)." },
             { icon: "🎓", title: "Workshop de 2 dias", desc: "Treinamento prático com todos os times de design e engenharia para onboarding no sistema." },
             { icon: "☕", title: "Office Hours", desc: "Sessões semanais de suporte por 3 meses — cruciais para resolver dúvidas e resistências." },
-            { icon: "🗳️", title: "Processo RFC", desc: "Request for Component: qualquer membro pode propor novos componentes com critérios claros." },
+            { icon: "🌟", title: "Champions", desc: "Um designer e um engenheiro de cada time como embaixadores internos do sistema." },
+            { icon: "📊", title: "Métricas de adoção", desc: "Dashboard de adoção tracking uso de componentes do DS vs. componentes locais por time." },
+          ]},
+          { type: "bullets", title: "Resultados da Adoção", items: [
+            "100% dos 3 times adotaram o design system em 6 meses",
+            "Tempo médio de design por feature nova reduziu em 65%",
+            "Zero componentes locais criados nos últimos 2 meses do período de adoção",
+            "Office hours semanais foram citadas como fator crucial por 100% dos times",
+          ]},
+          { type: "quote", text: "\"A adoção depende mais de relacionamento e suporte do que de qualidade técnica.\" — Aprendizado-chave do projeto" },
+        ],
+      },
+      {
+        label: "06. GOVERNANÇA",
+        title: "Sustentando a Evolução",
+        subtitle: "Criação do processo de RFC (Request for Component) para contribuições e ciclos de versão.",
+        sections: [
+          { type: "text", title: "RFC — Request for Component", text: "Para garantir que o design system evolua sem perder consistência, criamos o processo de RFC: qualquer membro de qualquer time pode propor novos componentes ou modificações através de um template estruturado. As propostas passam por revisão do comitê de design system e, se aprovadas, entram no backlog de implementação." },
+          { type: "bullets", title: "Processo de RFC", items: [
+            "Template padronizado com justificativa de negócio, casos de uso e proposta visual",
+            "Revisão pelo comitê (1 designer + 1 engenheiro + 1 product) em até 5 dias úteis",
+            "Critérios claros: usado em 2+ produtos, não duplica componente existente, segue tokens",
+            "Versionamento semântico: major (breaking), minor (novas features), patch (fixes)",
+            "Release notes mensais comunicando todas as mudanças para os times",
+          ]},
+          { type: "cards", title: "Impacto da Governança", cards: [
+            { icon: "🗳️", title: "23 RFCs recebidas", desc: "Em 3 meses de operação, 23 propostas de novos componentes foram submetidas pelos times." },
+            { icon: "✅", title: "15 aprovadas", desc: "15 componentes novos incorporados ao sistema seguindo o processo de governança." },
+            { icon: "3x", title: "Velocidade", desc: "Velocidade de entrega de novos componentes triplicou com o processo estruturado." },
           ]},
         ],
       },
