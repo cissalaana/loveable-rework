@@ -12,12 +12,13 @@ export interface Metric {
 }
 
 export interface SprintContent {
-  type: "text" | "bullets" | "image" | "cards" | "quote";
+  type: "text" | "bullets" | "image" | "images" | "cards" | "quote";
   title?: string;
   text?: string;
   items?: string[];
   image?: string;
   imageCaption?: string;
+  images?: { src: string; caption?: string }[];
   cards?: { icon?: string; title: string; desc: string }[];
 }
 
