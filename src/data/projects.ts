@@ -348,6 +348,11 @@ export const PROJECTS: Project[] = [
             "Relatório exportável em um clique para reuniões com a secretaria",
           ]},
           { type: "quote", text: "\"Se eu pudesse ver só uma coisa pela manhã, seria quem está faltando muito — porque é aí que começa a evasão.\" — Dona Marta, Diretora" },
+          { type: "personas", title: "Personas do Projeto", personas: [
+            { name: "Dona Marta", age: "54 anos", role: "Persona Principal", desc: "Diretora de escola pública há 12 anos. Usa planilhas básicas e precisa de visualizações claras para tomar decisões rápidas sobre alocação de recursos." },
+            { name: "Prof. Ricardo", age: "38 anos", role: "Coordenador Pedagógico", desc: "Precisa acompanhar indicadores de desempenho dos alunos para planejar intervenções pedagógicas no tempo certo." },
+            { name: "Ana Paula", age: "29 anos", role: "Analista da Secretaria", desc: "Consolida dados de múltiplas escolas e precisa gerar relatórios comparativos para tomada de decisão na gestão pública." },
+          ]},
         ],
       },
       {
