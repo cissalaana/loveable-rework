@@ -261,17 +261,23 @@ const CaseStudyPage = () => {
                         <h3 className="font-display text-[1.2rem] font-semibold text-foreground mb-4">{section.title}</h3>
                       )}
                       <ul style={{ display: "flex", flexDirection: "column", gap: 12, paddingLeft: 0, listStyle: "none" }}>
-                        {section.items?.map((item, itemIdx) => (
-                          <li key={itemIdx} style={{ display: "flex", gap: 14, alignItems: "flex-start" }}>
-                            <span style={{
-                              width: 8, height: 8, borderRadius: "50%", marginTop: 8, flexShrink: 0,
-                              background: "hsl(var(--rose))",
-                            }} />
-                            <span className="font-body text-[0.92rem] leading-[1.75] font-light" style={{ color: "#5A4A44" }}>
-                              {item}
-                            </span>
-                          </li>
-                        ))}
+                        {section.items?.map((item, itemIdx) => {
+                          const colonIdx = item.indexOf(":");
+                          const hasBoldPrefix = colonIdx > 0 && colonIdx < 50;
+                          return (
+                            <li key={itemIdx} style={{ display: "flex", gap: 14, alignItems: "flex-start" }}>
+                              <span style={{
+                                width: 8, height: 8, borderRadius: "50%", marginTop: 8, flexShrink: 0,
+                                background: "hsl(var(--rose))",
+                              }} />
+                              <span className="font-body text-[0.92rem] leading-[1.75] font-light" style={{ color: "#5A4A44" }}>
+                                {hasBoldPrefix ? (
+                                  <><strong className="font-semibold text-foreground">{item.substring(0, colonIdx)}</strong>{item.substring(colonIdx)}</>
+                                ) : item}
+                              </span>
+                            </li>
+                          );
+                        })}
                       </ul>
                     </div>
                   );
