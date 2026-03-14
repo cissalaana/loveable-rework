@@ -12,7 +12,7 @@ export interface Metric {
 }
 
 export interface SprintContent {
-  type: "text" | "bullets" | "image" | "images" | "cards" | "quote";
+  type: "text" | "bullets" | "image" | "images" | "cards" | "quote" | "metrics" | "personas";
   title?: string;
   text?: string;
   items?: string[];
@@ -20,6 +20,8 @@ export interface SprintContent {
   imageCaption?: string;
   images?: { src: string; caption?: string }[];
   cards?: { icon?: string; title: string; desc: string }[];
+  metrics?: Metric[];
+  personas?: { name: string; age: string; role: string; desc: string; photo?: string; journeyImage?: string }[];
 }
 
 export interface Sprint {
@@ -165,6 +167,12 @@ export const PROJECTS: Project[] = [
             { icon: "⌚", title: "Wearables de segurança", desc: "Dispositivos como Revolar e Invisawear serviram de referência para o conceito do botão de pânico vestível." },
             { icon: "🏫", title: "Sistemas de campus", desc: "Soluções de segurança universitária como LiveSafe e Rave Guardian foram estudadas para contexto acadêmico." },
           ]},
+          { type: "metrics", title: "Métricas da Pesquisa", metrics: [
+            { value: "74", label: "Respondentes", sub: "estudantes de diferentes cursos" },
+            { value: "85,1%", label: "Se sentem inseguras", sub: "com medidas atuais do campus" },
+            { value: "97,3%", label: "Se locomovem a pé", sub: "dentro da universidade" },
+            { value: "<2s", label: "Tempo de acionamento", sub: "emergência via dispositivo" },
+          ]},
         ],
       },
       {
@@ -173,7 +181,16 @@ export const PROJECTS: Project[] = [
         subtitle: "A partir dos resultados da pesquisa, definimos as necessidades e oportunidades para o desenvolvimento da solução, construindo personas, jornadas e os princípios de design ubíquo que guiariam todo o projeto.",
         sections: [
           { type: "text", title: "Mapa de Calor do Campus", text: "Com base nos dados coletados, construímos um mapa de calor do campus identificando as áreas de maior risco e menor percepção de segurança. O mapa revelou que as zonas de transição entre centros acadêmicos concentravam os maiores índices de insegurança, especialmente em horários noturnos." },
-          { type: "text", title: "Personas & Jornada", text: "Criamos a persona principal Maria Cecília (21 anos, estudante de Psicologia) e 3 personas secundárias do ecossistema: o segurança Erandir, o coordenador Márcio e o técnico de câmeras Luiz. Mapeamos a jornada completa com momentos críticos de insegurança, identificando os pontos de dor e oportunidades de intervenção." },
+          { type: "personas", title: "Personas do Projeto", personas: [
+            { name: "Maria Cecília", age: "21 anos", role: "Persona Principal", desc: "Estudante de Psicologia no 5º período. Faz estágio no HC e caminha sozinha pelo campus, especialmente à noite. Não quer mudar sua rotina — quer se sentir segura enquanto vive a vida que já tem." },
+            { name: "Erandir", age: "47 anos", role: "Segurança do campus", desc: "Precisa ser notificado rapidamente em casos de emergência para responder com agilidade." },
+            { name: "Márcio", age: "36 anos", role: "Coordenador de curso", desc: "Responsável pela distribuição dos dispositivos e cadastro das estudantes no sistema." },
+            { name: "Luiz", age: "40 anos", role: "Técnico de câmeras", desc: "Acessa imagens de segurança para auxiliar na verificação de ocorrências." },
+          ]},
+          { type: "text", title: "Jornada do Usuário", text: "Mapeamos a jornada completa de Maria Cecília com momentos críticos de insegurança, identificando os pontos de dor e oportunidades de intervenção ao longo de seu deslocamento pelo campus.\n\nA jornada revelou que os momentos de maior vulnerabilidade ocorrem durante transições entre centros acadêmicos, especialmente em horários noturnos e em áreas com pouca iluminação." },
+          { type: "images", title: "Jornada e Mapeamento", images: [
+            { src: "/assets/MockupGuardiã1.png", caption: "Mapeamento de jornada da persona Maria Cecília" },
+          ]},
           { type: "bullets", title: "Princípios de Design Ubíquo (UUI)", items: [
             "Desatenção — o dispositivo funciona independente, sem precisar desbloquear o celular",
             "Fluxo cognitivo — interações mínimas para manter o foco no ambiente",
@@ -181,7 +198,6 @@ export const PROJECTS: Project[] = [
             "Medo de interação — duplo clique evita acionamentos acidentais",
             "Padrões — o app aprende com o histórico de rotas da usuária",
           ]},
-          { type: "image", image: "/assets/MockupGuardiã1.png", imageCaption: "Mapeamento de jornada da persona Maria Cecília" },
         ],
       },
       {
@@ -309,7 +325,13 @@ export const PROJECTS: Project[] = [
           { type: "cards", title: "Oportunidades Identificadas", cards: [
             { icon: "📊", title: "Visualização progressiva", desc: "Do simples ao complexo — revelar dados gradualmente conforme a familiaridade do gestor." },
             { icon: "🔔", title: "Alertas automáticos", desc: "Indicadores críticos precisam gerar notificações proativas, não esperar que o gestor descubra." },
-            { icon: "📱", title: "Mobile-first", desc: "Gestores passam mais tempo fora do escritório do que dentro — a solução precisa ser mobile." },
+           { icon: "📱", title: "Mobile-first", desc: "Gestores passam mais tempo fora do escritório do que dentro — a solução precisa ser mobile." },
+          ]},
+          { type: "metrics", title: "Métricas da Pesquisa", metrics: [
+            { value: "–40%", label: "Tempo de decisão", sub: "de 3 dias para 1,8 dia" },
+            { value: "93%", label: "Satisfação dos gestores", sub: "NPS de 42 → 71" },
+            { value: "12x", label: "Mais rápido", sub: "para gerar relatórios" },
+            { value: "340", label: "Escolas impactadas", sub: "no piloto do primeiro ano" },
           ]},
         ],
       },
@@ -326,6 +348,11 @@ export const PROJECTS: Project[] = [
             "Relatório exportável em um clique para reuniões com a secretaria",
           ]},
           { type: "quote", text: "\"Se eu pudesse ver só uma coisa pela manhã, seria quem está faltando muito — porque é aí que começa a evasão.\" — Dona Marta, Diretora" },
+          { type: "personas", title: "Personas do Projeto", personas: [
+            { name: "Dona Marta", age: "54 anos", role: "Persona Principal", desc: "Diretora de escola pública há 12 anos. Usa planilhas básicas e precisa de visualizações claras para tomar decisões rápidas sobre alocação de recursos." },
+            { name: "Prof. Ricardo", age: "38 anos", role: "Coordenador Pedagógico", desc: "Precisa acompanhar indicadores de desempenho dos alunos para planejar intervenções pedagógicas no tempo certo." },
+            { name: "Ana Paula", age: "29 anos", role: "Analista da Secretaria", desc: "Consolida dados de múltiplas escolas e precisa gerar relatórios comparativos para tomada de decisão na gestão pública." },
+          ]},
         ],
       },
       {
@@ -479,6 +506,12 @@ export const PROJECTS: Project[] = [
             { icon: "🔤", title: "Tipografia", desc: "3 famílias tipográficas diferentes, com 18 variações de tamanho sem padrão." },
             { icon: "📐", title: "Espaçamento", desc: "Nenhum sistema de grid ou escala de espaçamento — valores arbitrários em cada tela." },
           ]},
+          { type: "metrics", title: "Métricas da Auditoria", metrics: [
+            { value: "–65%", label: "Tempo de design", sub: "por feature nova" },
+            { value: "42→1", label: "Versões de botão", sub: "padronizadas para 1 sistema" },
+            { value: "100%", label: "Adoção pelos times", sub: "em 6 meses" },
+            { value: "3x", label: "Velocidade de entrega", sub: "de novos componentes" },
+          ]},
         ],
       },
       {
@@ -494,6 +527,11 @@ export const PROJECTS: Project[] = [
             "Figma como fonte da verdade com sincronização automática para código",
           ]},
           { type: "quote", text: "\"Quando você acerta os tokens, os componentes quase se constroem sozinhos.\" — Feedback do time de engenharia após adoção" },
+          { type: "personas", title: "Personas do Projeto", personas: [
+            { name: "Carla", age: "31 anos", role: "Persona Principal", desc: "Product Designer sênior. Precisa de componentes prontos e documentados para focar em problemas de negócio ao invés de reinventar padrões visuais." },
+            { name: "Lucas", age: "27 anos", role: "Engenheiro Frontend", desc: "Implementa as interfaces e precisa de especificações claras, tokens consistentes e componentes reutilizáveis em código." },
+            { name: "Fernanda", age: "35 anos", role: "Head de Produto", desc: "Precisa garantir que a experiência seja consistente entre todos os produtos para fortalecer a marca e reduzir custos." },
+          ]},
         ],
       },
       {
@@ -650,6 +688,12 @@ export const PROJECTS: Project[] = [
             "Todos: falta de confiança nas ONGs listadas — sem avaliações ou transparência",
           ]},
           { type: "quote", text: "\"Eu quero ajudar, mas quando abro o app e vejo 200 causas, eu travo. Não sei por onde começar.\" — Beatriz, 26 anos" },
+          { type: "metrics", title: "Métricas da Pesquisa", metrics: [
+            { value: "+60%", label: "Engajamento geral", sub: "usuários ativos mensais" },
+            { value: "12→31%", label: "Taxa de ativação", sub: "cadastro → primeira ação" },
+            { value: "+3.2k", label: "Novos voluntários", sub: "ativos em 90 dias" },
+            { value: "–44%", label: "Tempo para match", sub: "de 8min para 4.5min" },
+          ]},
         ],
       },
       {
@@ -668,6 +712,11 @@ export const PROJECTS: Project[] = [
             { icon: "🔄", title: "Scroll infinito", desc: "Usuários rolavam a lista de causas várias vezes sem clicar — paralisados pela quantidade de opções." },
             { icon: "↩️", title: "Volta ao início", desc: "34% dos usuários voltavam ao topo da lista após rolar até o final — sinal claro de indecisão." },
             { icon: "❌", title: "Abandono silencioso", desc: "A maioria saía sem interagir com nenhuma causa — simplesmente fechavam o app." },
+          ]},
+          { type: "personas", title: "Personas do Projeto", personas: [
+            { name: "Beatriz", age: "26 anos", role: "Persona Principal", desc: "Profissional de marketing com pouco tempo livre. Quer fazer voluntariado mas se sente sobrecarregada pelas opções e não sabe por onde começar." },
+            { name: "Renato", age: "34 anos", role: "Voluntário inativo", desc: "Se cadastrou com entusiasmo mas nunca encontrou uma causa que combinasse com suas habilidades e disponibilidade." },
+            { name: "Coordenadora Vera", age: "48 anos", role: "ONG parceira", desc: "Precisa de voluntários comprometidos e recorrentes, não de cadastros que nunca se convertem em ação." },
           ]},
         ],
       },

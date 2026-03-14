@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, Fragment } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useReveal } from "@/hooks/useReveal";
 import { PROJECTS } from "@/data/projects";
@@ -215,9 +215,9 @@ const CaseStudyPage = () => {
       </section>
 
 {/* Sprints */}
-      {project.sprints && project.sprints.length > 0 && project.sprints.map((sprint, sprintIdx) => (
+{project.sprints && project.sprints.length > 0 && project.sprints.map((sprint, sprintIdx) => (
+        <Fragment key={sprintIdx}>
         <section
-          key={sprintIdx}
           className="section-pad"
           style={{
             padding: "96px 48px",
@@ -245,9 +245,11 @@ const CaseStudyPage = () => {
                       {section.title && (
                         <h3 className="font-display text-[1.2rem] font-semibold text-foreground mb-3">{section.title}</h3>
                       )}
-                      <p className="font-body text-[0.95rem] leading-[1.85] font-light" style={{ color: "#5A4A44" }}>
-                        {section.text}
-                      </p>
+                      {section.text?.split("\n\n").map((paragraph, pIdx) => (
+                        <p key={pIdx} className="font-body text-[0.95rem] leading-[1.85] font-light mb-4 last:mb-0" style={{ color: "#5A4A44" }}>
+                          {paragraph}
+                        </p>
+                      ))}
                     </div>
                   );
                 }
@@ -259,17 +261,23 @@ const CaseStudyPage = () => {
                         <h3 className="font-display text-[1.2rem] font-semibold text-foreground mb-4">{section.title}</h3>
                       )}
                       <ul style={{ display: "flex", flexDirection: "column", gap: 12, paddingLeft: 0, listStyle: "none" }}>
-                        {section.items?.map((item, itemIdx) => (
-                          <li key={itemIdx} style={{ display: "flex", gap: 14, alignItems: "flex-start" }}>
-                            <span style={{
-                              width: 8, height: 8, borderRadius: "50%", marginTop: 8, flexShrink: 0,
-                              background: "hsl(var(--rose))",
-                            }} />
-                            <span className="font-body text-[0.92rem] leading-[1.75] font-light" style={{ color: "#5A4A44" }}>
-                              {item}
-                            </span>
-                          </li>
-                        ))}
+                        {section.items?.map((item, itemIdx) => {
+                          const colonIdx = item.indexOf(":");
+                          const hasBoldPrefix = colonIdx > 0 && colonIdx < 50;
+                          return (
+                            <li key={itemIdx} style={{ display: "flex", gap: 14, alignItems: "flex-start" }}>
+                              <span style={{
+                                width: 8, height: 8, borderRadius: "50%", marginTop: 8, flexShrink: 0,
+                                background: "hsl(var(--rose))",
+                              }} />
+                              <span className="font-body text-[0.92rem] leading-[1.75] font-light" style={{ color: "#5A4A44" }}>
+                                {hasBoldPrefix ? (
+                                  <><strong className="font-semibold text-foreground">{item.substring(0, colonIdx)}</strong>{item.substring(colonIdx)}</>
+                                ) : item}
+                              </span>
+                            </li>
+                          );
+                        })}
                       </ul>
                     </div>
                   );
@@ -357,9 +365,81 @@ const CaseStudyPage = () => {
                       borderLeft: "3px solid hsl(var(--rose))",
                       paddingLeft: 28, paddingTop: 8, paddingBottom: 8,
                     }}>
-                      <p className="font-display text-[1.15rem] font-light leading-[1.8] italic" style={{ color: "#5A4A44" }}>
-                        {section.text}
-                      </p>
+                      {section.text?.split("\n\n").map((paragraph, pIdx) => (
+                        <p key={pIdx} className="font-display text-[1.15rem] font-light leading-[1.8] italic mb-4 last:mb-0" style={{ color: "#5A4A44" }}>
+                          {paragraph}
+                        </p>
+                      ))}
+                    </div>
+                  );
+                }
+
+                if (section.type === "metrics") {
+                  return (
+                    <div key={secIdx} className="reveal">
+                      {section.title && (
+                        <h3 className="font-display text-[1.2rem] font-semibold text-foreground mb-5">{section.title}</h3>
+                      )}
+                      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(160px,1fr))", gap: 16 }}>
+                        {section.metrics?.map((m, mIdx) => (
+                          <div key={mIdx} style={{
+                            padding: "28px 20px", textAlign: "center", borderRadius: 12,
+                            background: sprintIdx % 2 === 0 ? "#fff" : "rgba(247,240,234,0.5)",
+                            border: "1px solid rgba(44,24,16,0.07)",
+                          }}>
+                            <p className="font-display text-[2.2rem] font-semibold text-rose leading-none mb-2">{m.value}</p>
+                            <p className="font-body text-[0.82rem] font-semibold text-foreground mb-1">{m.label}</p>
+                            <p className="font-body text-[0.7rem] font-light" style={{ color: "#9A8A82" }}>{m.sub}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                }
+
+                if (section.type === "personas") {
+                  return (
+                    <div key={secIdx} className="reveal">
+                      {section.title && (
+                        <h3 className="font-display text-[1.2rem] font-semibold text-foreground mb-5">{section.title}</h3>
+                      )}
+                      <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+                        {section.personas?.map((persona, pIdx) => (
+                          <div key={pIdx} style={{
+                            padding: "28px 24px", borderRadius: 12,
+                            background: pIdx === 0 ? "rgba(235,165,165,0.06)" : (sprintIdx % 2 === 0 ? "#fff" : "rgba(247,240,234,0.5)"),
+                            border: pIdx === 0 ? "1.5px solid rgba(235,165,165,0.25)" : "1px solid rgba(44,24,16,0.07)",
+                          }}>
+                            <div style={{ display: "flex", gap: 20, alignItems: "flex-start" }}>
+                              {persona.photo ? (
+                                <img src={persona.photo} alt={persona.name} style={{ width: 72, height: 72, borderRadius: "50%", objectFit: "cover", flexShrink: 0, cursor: "zoom-in" }} onClick={() => setZoomedImage(persona.photo!)} />
+                              ) : (
+                                <div style={{ width: 72, height: 72, borderRadius: "50%", background: "rgba(235,165,165,0.12)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, fontSize: "1.5rem" }}>
+                                  👤
+                                </div>
+                              )}
+                              <div style={{ flex: 1 }}>
+                                <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 8, flexWrap: "wrap" }}>
+                                  <h4 className="font-display text-[1.1rem] font-semibold text-foreground">{persona.name}</h4>
+                                  <span className="font-body text-[0.75rem] font-medium" style={{ color: "#9A8A82" }}>{persona.age}</span>
+                                  <span style={{
+                                    padding: "4px 14px", borderRadius: 50, fontSize: "0.72rem", fontWeight: 600,
+                                    background: pIdx === 0 ? "rgba(235,165,165,0.18)" : "rgba(164,189,168,0.15)",
+                                    color: pIdx === 0 ? "#C47878" : "#6A9470",
+                                  }}>{persona.role}</span>
+                                </div>
+                                <p className="font-body text-[0.9rem] leading-[1.75] font-light" style={{ color: "#5A4A44" }}>{persona.desc}</p>
+                              </div>
+                            </div>
+                            {persona.journeyImage && (
+                              <div style={{ marginTop: 16, borderRadius: 12, overflow: "hidden", cursor: "zoom-in" }} onClick={() => setZoomedImage(persona.journeyImage!)}>
+                                <img src={persona.journeyImage} alt={`Jornada de ${persona.name}`} style={{ width: "100%", height: "auto", maxHeight: 300, objectFit: "contain", borderRadius: 12 }} loading="lazy" />
+                                <p className="font-body text-[0.75rem] font-light mt-2 text-center" style={{ color: "#9A8A82" }}>Jornada do Usuário — {persona.name}</p>
+                              </div>
+                            )}
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   );
                 }
@@ -369,98 +449,11 @@ const CaseStudyPage = () => {
             </div>
           </div>
         </section>
-      ))}
-{/* Pesquisa */}
-      {project.research && (
-        <section className="section-pad" style={{ padding: "96px 48px", background: "#F7F0EA" }}>
-          <div style={{ maxWidth: 900, margin: "0 auto" }}>
-            <p className="reveal font-body text-[0.72rem] font-medium text-rose tracking-[0.2em] uppercase mb-[18px]">Pesquisa</p>
-            <h2 className="reveal reveal-d1 font-display font-semibold text-foreground mb-6" style={{ fontSize: "clamp(1.8rem,3.5vw,2.8rem)" }}>
-              O que descobrimos
-            </h2>
-            <p className="reveal reveal-d1 font-body text-[1.05rem] leading-[1.85] font-light mb-12" style={{ color: "#5A4A44" }}>
-              {project.research}
-            </p>
-            {project.researchInsights && (
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }} className="cs-grid">
-                {project.researchInsights.map((insight, i) => (
-                  <div key={i} className={`reveal reveal-d${(i % 2) + 1}`} style={{
-                    padding: "28px 24px", borderRadius: 12, background: "#fff",
-                    border: "1px solid rgba(44,24,16,0.07)",
-                  }}>
-                    <h4 className="font-display text-[1.05rem] font-semibold text-foreground mb-2">{insight.title}</h4>
-                    <p className="font-body text-[0.88rem] leading-[1.7] font-light" style={{ color: "#5A4A44" }}>{insight.detail}</p>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-        </section>
-      )}
-      {/* Personas */}
-      {project.personas && project.personas.length > 0 && (
-        <section className="section-pad bg-background" style={{ padding: "96px 48px" }}>
-          <div style={{ maxWidth: 900, margin: "0 auto" }}>
-            <p className="reveal font-body text-[0.72rem] font-medium text-meadow tracking-[0.2em] uppercase mb-[18px]">Personas</p>
-            <h2 className="reveal reveal-d1 font-display font-semibold text-foreground mb-6" style={{ fontSize: "clamp(1.8rem,3.5vw,2.8rem)" }}>
-              Para quem projetamos
-            </h2>
-            <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
-              {project.personas.map((persona, i) => (
-                <div key={i} className={`reveal reveal-d${(i % 3) + 1}`} style={{
-                  padding: "32px 28px", borderRadius: 12,
-                  background: i === 0 ? "rgba(235,165,165,0.06)" : "#fff",
-                  border: i === 0 ? "1.5px solid rgba(235,165,165,0.25)" : "1px solid rgba(44,24,16,0.07)",
-                }}>
-                  <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 12, flexWrap: "wrap" }}>
-                    <h4 className="font-display text-[1.15rem] font-semibold text-foreground">{persona.name}</h4>
-                    <span className="font-body text-[0.75rem] font-medium" style={{ color: "#9A8A82" }}>{persona.age}</span>
-                    <span style={{
-                      padding: "4px 14px", borderRadius: 50, fontSize: "0.72rem", fontWeight: 600,
-                      background: i === 0 ? "rgba(235,165,165,0.18)" : "rgba(164,189,168,0.15)",
-                      color: i === 0 ? "#C47878" : "#6A9470",
-                    }}>{persona.role}</span>
-                  </div>
-                  <p className="font-body text-[0.9rem] leading-[1.75] font-light" style={{ color: "#5A4A44" }}>{persona.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
 
-      
-      {/* Métricas */}
-      <section className="section-pad bg-foreground relative overflow-hidden" style={{ padding: "96px 48px" }}>
-        <div style={{ position: "absolute", top: "-40px", left: "50%", transform: "translateX(-50%)", width: 600, height: 600, borderRadius: "50%", pointerEvents: "none", background: "radial-gradient(circle, rgba(235,165,165,0.08) 0%, transparent 70%)" }}/>
-        <div style={{ maxWidth: 900, margin: "0 auto" }}>
-          <p className="reveal font-body text-[0.72rem] font-medium text-rose tracking-[0.2em] uppercase mb-[18px] text-center">
-            Resultados & Métricas
-          </p>
-          <h2 className="reveal reveal-d1 font-display font-semibold text-background text-center mb-16" style={{ fontSize: "clamp(1.8rem,3.5vw,2.8rem)" }}>
-            Impacto mensurável
-          </h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(180px,1fr))", gap: 20 }}>
-            {project.metrics.map((m, i) => (
-              <div key={m.label} className={`reveal reveal-d${i + 1}`} style={{
-                padding: "36px 28px", textAlign: "center",
-                background: "rgba(250,245,240,0.05)",
-                border: "1px solid rgba(250,245,240,0.1)", borderRadius: 12,
-              }}>
-                <p className="font-display text-[3rem] font-semibold text-rose leading-none mb-[10px]">{m.value}</p>
-                <p className="font-body text-[0.82rem] font-semibold text-background mb-[6px]">{m.label}</p>
-                <p className="font-body text-[0.72rem] font-light" style={{ color: "rgba(250,245,240,0.4)" }}>{m.sub}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Stakeholders & Metodologias */}
-      <section className="section-pad bg-background" style={{ padding: "96px 48px" }}>
-        <div style={{ maxWidth: 1000, margin: "0 auto" }}>
-          <div className="cs-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48 }}>
-            <div>
+        {/* Stakeholders entre sprint ODS e Pesquisa */}
+        {sprintIdx === 0 && project.stakeholders && project.stakeholders.length > 0 && (
+          <section className="section-pad bg-background" style={{ padding: "96px 48px" }}>
+            <div style={{ maxWidth: 900, margin: "0 auto" }}>
               <p className="reveal font-body text-[0.72rem] font-medium text-rose tracking-[0.2em] uppercase mb-6">
                 Stakeholders Envolvidos
               </p>
@@ -477,23 +470,28 @@ const CaseStudyPage = () => {
                 ))}
               </div>
             </div>
+          </section>
+        )}
 
-            <div>
-              <p className="reveal font-body text-[0.72rem] font-medium text-meadow tracking-[0.2em] uppercase mb-6">
-                Metodologias Aplicadas
-              </p>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
-                {project.methodologies.map((m, i) => (
-                  <span key={m} className={`reveal reveal-d${(i % 4) + 1}`} style={{
-                    padding: "10px 20px",
-                    border: "1.5px solid rgba(164,189,168,0.4)",
-                    borderRadius: 50, fontSize: "0.82rem",
-                    fontWeight: 500, color: "#6A9470",
-                    background: "rgba(164,189,168,0.08)",
-                  }}>{m}</span>
-                ))}
-              </div>
-            </div>
+        </Fragment>
+      ))}
+
+      {/* Metodologias */}
+      <section className="section-pad bg-background" style={{ padding: "96px 48px" }}>
+        <div style={{ maxWidth: 900, margin: "0 auto" }}>
+          <p className="reveal font-body text-[0.72rem] font-medium text-meadow tracking-[0.2em] uppercase mb-6">
+            Metodologias Aplicadas
+          </p>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
+            {project.methodologies.map((m, i) => (
+              <span key={m} className={`reveal reveal-d${(i % 4) + 1}`} style={{
+                padding: "10px 20px",
+                border: "1.5px solid rgba(164,189,168,0.4)",
+                borderRadius: 50, fontSize: "0.82rem",
+                fontWeight: 500, color: "#6A9470",
+                background: "rgba(164,189,168,0.08)",
+              }}>{m}</span>
+            ))}
           </div>
         </div>
       </section>
