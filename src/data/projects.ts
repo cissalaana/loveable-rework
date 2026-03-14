@@ -12,7 +12,7 @@ export interface Metric {
 }
 
 export interface SprintContent {
-  type: "text" | "bullets" | "image" | "images" | "cards" | "quote";
+  type: "text" | "bullets" | "image" | "images" | "cards" | "quote" | "metrics" | "personas";
   title?: string;
   text?: string;
   items?: string[];
@@ -20,6 +20,8 @@ export interface SprintContent {
   imageCaption?: string;
   images?: { src: string; caption?: string }[];
   cards?: { icon?: string; title: string; desc: string }[];
+  metrics?: Metric[];
+  personas?: { name: string; age: string; role: string; desc: string; photo?: string; journeyImage?: string }[];
 }
 
 export interface Sprint {
