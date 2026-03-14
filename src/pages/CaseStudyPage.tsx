@@ -295,7 +295,7 @@ const CaseStudyPage = () => {
                     </div>
                   );
                 }
-
+ 
                 if (section.type === "images") {
                   return (
                     <div key={secIdx} className="reveal">
@@ -370,8 +370,7 @@ const CaseStudyPage = () => {
           </div>
         </section>
       ))}
-
-      {/* Pesquisa */}
+{/* Pesquisa */}
       {project.research && (
         <section className="section-pad" style={{ padding: "96px 48px", background: "#F7F0EA" }}>
           <div style={{ maxWidth: 900, margin: "0 auto" }}>
@@ -398,7 +397,6 @@ const CaseStudyPage = () => {
           </div>
         </section>
       )}
-
       {/* Personas */}
       {project.personas && project.personas.length > 0 && (
         <section className="section-pad bg-background" style={{ padding: "96px 48px" }}>
