@@ -133,7 +133,7 @@ export const PROJECTS: Project[] = [
           ]},
           { type: "text", title: "Método Tiles IoT Toolkit", text: "Para definir as missões do projeto e construir a protopersona, utilizamos o Tiles IoT Toolkit — um kit de cartas de design voltado para a criação de soluções que envolvem Internet das Coisas. O toolkit nos auxiliou a mapear de forma estruturada os elementos-chave da solução: quem são os usuários, quais são seus comportamentos, em que contextos interagem com o ambiente e quais tecnologias poderiam ser aplicadas. Com base nessas combinações, formulamos as missões que guiariam o desenvolvimento do projeto e construímos uma protopersona inicial, sintetizando as principais necessidades e dores identificadas durante a excursão e a pesquisa preliminar." },
           { type: "bullets", title: "Missões", items: [
-            "85,1% das estudantes não se sentem seguras com as medidas existentes no campus",
+            "Sixth Sense: refere-se à soluções que tragam ao usuário uma sensação de percepção extra, similar a um superpoder. Justamente por isso escolhemos essa missão para nos nortear, desejamos prover às mulheres pela nossa solução empoderamento e por meio dele sua segurança.",
             "50% das situações de vulnerabilidade acontecem fora dos centros acadêmicos — em caminhos e áreas de transição",
             "97,3% se locomovem a pé dentro do campus, tornando essencial uma solução para pedestres",
             "47,3% não se sentem à vontade para denunciar casos de assédio ou violência",
