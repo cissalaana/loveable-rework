@@ -181,7 +181,16 @@ export const PROJECTS: Project[] = [
         subtitle: "A partir dos resultados da pesquisa, definimos as necessidades e oportunidades para o desenvolvimento da solução, construindo personas, jornadas e os princípios de design ubíquo que guiariam todo o projeto.",
         sections: [
           { type: "text", title: "Mapa de Calor do Campus", text: "Com base nos dados coletados, construímos um mapa de calor do campus identificando as áreas de maior risco e menor percepção de segurança. O mapa revelou que as zonas de transição entre centros acadêmicos concentravam os maiores índices de insegurança, especialmente em horários noturnos." },
-          { type: "text", title: "Personas & Jornada", text: "Criamos a persona principal Maria Cecília (21 anos, estudante de Psicologia) e 3 personas secundárias do ecossistema: o segurança Erandir, o coordenador Márcio e o técnico de câmeras Luiz. Mapeamos a jornada completa com momentos críticos de insegurança, identificando os pontos de dor e oportunidades de intervenção." },
+          { type: "personas", title: "Personas do Projeto", personas: [
+            { name: "Maria Cecília", age: "21 anos", role: "Persona Principal", desc: "Estudante de Psicologia no 5º período. Faz estágio no HC e caminha sozinha pelo campus, especialmente à noite. Não quer mudar sua rotina — quer se sentir segura enquanto vive a vida que já tem." },
+            { name: "Erandir", age: "47 anos", role: "Segurança do campus", desc: "Precisa ser notificado rapidamente em casos de emergência para responder com agilidade." },
+            { name: "Márcio", age: "36 anos", role: "Coordenador de curso", desc: "Responsável pela distribuição dos dispositivos e cadastro das estudantes no sistema." },
+            { name: "Luiz", age: "40 anos", role: "Técnico de câmeras", desc: "Acessa imagens de segurança para auxiliar na verificação de ocorrências." },
+          ]},
+          { type: "text", title: "Jornada do Usuário", text: "Mapeamos a jornada completa de Maria Cecília com momentos críticos de insegurança, identificando os pontos de dor e oportunidades de intervenção ao longo de seu deslocamento pelo campus.\n\nA jornada revelou que os momentos de maior vulnerabilidade ocorrem durante transições entre centros acadêmicos, especialmente em horários noturnos e em áreas com pouca iluminação." },
+          { type: "images", title: "Jornada e Mapeamento", images: [
+            { src: "/assets/MockupGuardiã1.png", caption: "Mapeamento de jornada da persona Maria Cecília" },
+          ]},
           { type: "bullets", title: "Princípios de Design Ubíquo (UUI)", items: [
             "Desatenção — o dispositivo funciona independente, sem precisar desbloquear o celular",
             "Fluxo cognitivo — interações mínimas para manter o foco no ambiente",
@@ -189,7 +198,6 @@ export const PROJECTS: Project[] = [
             "Medo de interação — duplo clique evita acionamentos acidentais",
             "Padrões — o app aprende com o histórico de rotas da usuária",
           ]},
-          { type: "image", image: "/assets/MockupGuardiã1.png", imageCaption: "Mapeamento de jornada da persona Maria Cecília" },
         ],
       },
       {
