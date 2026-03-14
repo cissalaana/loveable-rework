@@ -167,6 +167,12 @@ export const PROJECTS: Project[] = [
             { icon: "⌚", title: "Wearables de segurança", desc: "Dispositivos como Revolar e Invisawear serviram de referência para o conceito do botão de pânico vestível." },
             { icon: "🏫", title: "Sistemas de campus", desc: "Soluções de segurança universitária como LiveSafe e Rave Guardian foram estudadas para contexto acadêmico." },
           ]},
+          { type: "metrics", title: "Métricas da Pesquisa", metrics: [
+            { value: "74", label: "Respondentes", sub: "estudantes de diferentes cursos" },
+            { value: "85,1%", label: "Se sentem inseguras", sub: "com medidas atuais do campus" },
+            { value: "97,3%", label: "Se locomovem a pé", sub: "dentro da universidade" },
+            { value: "<2s", label: "Tempo de acionamento", sub: "emergência via dispositivo" },
+          ]},
         ],
       },
       {
