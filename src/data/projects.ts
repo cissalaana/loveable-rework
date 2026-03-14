@@ -325,7 +325,13 @@ export const PROJECTS: Project[] = [
           { type: "cards", title: "Oportunidades Identificadas", cards: [
             { icon: "📊", title: "Visualização progressiva", desc: "Do simples ao complexo — revelar dados gradualmente conforme a familiaridade do gestor." },
             { icon: "🔔", title: "Alertas automáticos", desc: "Indicadores críticos precisam gerar notificações proativas, não esperar que o gestor descubra." },
-            { icon: "📱", title: "Mobile-first", desc: "Gestores passam mais tempo fora do escritório do que dentro — a solução precisa ser mobile." },
+           { icon: "📱", title: "Mobile-first", desc: "Gestores passam mais tempo fora do escritório do que dentro — a solução precisa ser mobile." },
+          ]},
+          { type: "metrics", title: "Métricas da Pesquisa", metrics: [
+            { value: "–40%", label: "Tempo de decisão", sub: "de 3 dias para 1,8 dia" },
+            { value: "93%", label: "Satisfação dos gestores", sub: "NPS de 42 → 71" },
+            { value: "12x", label: "Mais rápido", sub: "para gerar relatórios" },
+            { value: "340", label: "Escolas impactadas", sub: "no piloto do primeiro ano" },
           ]},
         ],
       },
