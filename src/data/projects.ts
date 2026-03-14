@@ -527,6 +527,11 @@ export const PROJECTS: Project[] = [
             "Figma como fonte da verdade com sincronização automática para código",
           ]},
           { type: "quote", text: "\"Quando você acerta os tokens, os componentes quase se constroem sozinhos.\" — Feedback do time de engenharia após adoção" },
+          { type: "personas", title: "Personas do Projeto", personas: [
+            { name: "Carla", age: "31 anos", role: "Persona Principal", desc: "Product Designer sênior. Precisa de componentes prontos e documentados para focar em problemas de negócio ao invés de reinventar padrões visuais." },
+            { name: "Lucas", age: "27 anos", role: "Engenheiro Frontend", desc: "Implementa as interfaces e precisa de especificações claras, tokens consistentes e componentes reutilizáveis em código." },
+            { name: "Fernanda", age: "35 anos", role: "Head de Produto", desc: "Precisa garantir que a experiência seja consistente entre todos os produtos para fortalecer a marca e reduzir custos." },
+          ]},
         ],
       },
       {
