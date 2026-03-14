@@ -215,9 +215,9 @@ const CaseStudyPage = () => {
       </section>
 
 {/* Sprints */}
-      {project.sprints && project.sprints.length > 0 && project.sprints.map((sprint, sprintIdx) => (
+{project.sprints && project.sprints.length > 0 && project.sprints.map((sprint, sprintIdx) => (
+        <Fragment key={sprintIdx}>
         <section
-          key={sprintIdx}
           className="section-pad"
           style={{
             padding: "96px 48px",
