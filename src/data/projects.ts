@@ -713,6 +713,11 @@ export const PROJECTS: Project[] = [
             { icon: "↩️", title: "Volta ao início", desc: "34% dos usuários voltavam ao topo da lista após rolar até o final — sinal claro de indecisão." },
             { icon: "❌", title: "Abandono silencioso", desc: "A maioria saía sem interagir com nenhuma causa — simplesmente fechavam o app." },
           ]},
+          { type: "personas", title: "Personas do Projeto", personas: [
+            { name: "Beatriz", age: "26 anos", role: "Persona Principal", desc: "Profissional de marketing com pouco tempo livre. Quer fazer voluntariado mas se sente sobrecarregada pelas opções e não sabe por onde começar." },
+            { name: "Renato", age: "34 anos", role: "Voluntário inativo", desc: "Se cadastrou com entusiasmo mas nunca encontrou uma causa que combinasse com suas habilidades e disponibilidade." },
+            { name: "Coordenadora Vera", age: "48 anos", role: "ONG parceira", desc: "Precisa de voluntários comprometidos e recorrentes, não de cadastros que nunca se convertem em ação." },
+          ]},
         ],
       },
       {
