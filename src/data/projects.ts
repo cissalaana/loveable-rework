@@ -506,6 +506,12 @@ export const PROJECTS: Project[] = [
             { icon: "🔤", title: "Tipografia", desc: "3 famílias tipográficas diferentes, com 18 variações de tamanho sem padrão." },
             { icon: "📐", title: "Espaçamento", desc: "Nenhum sistema de grid ou escala de espaçamento — valores arbitrários em cada tela." },
           ]},
+          { type: "metrics", title: "Métricas da Auditoria", metrics: [
+            { value: "–65%", label: "Tempo de design", sub: "por feature nova" },
+            { value: "42→1", label: "Versões de botão", sub: "padronizadas para 1 sistema" },
+            { value: "100%", label: "Adoção pelos times", sub: "em 6 meses" },
+            { value: "3x", label: "Velocidade de entrega", sub: "de novos componentes" },
+          ]},
         ],
       },
       {
