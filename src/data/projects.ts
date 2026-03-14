@@ -688,6 +688,12 @@ export const PROJECTS: Project[] = [
             "Todos: falta de confiança nas ONGs listadas — sem avaliações ou transparência",
           ]},
           { type: "quote", text: "\"Eu quero ajudar, mas quando abro o app e vejo 200 causas, eu travo. Não sei por onde começar.\" — Beatriz, 26 anos" },
+          { type: "metrics", title: "Métricas da Pesquisa", metrics: [
+            { value: "+60%", label: "Engajamento geral", sub: "usuários ativos mensais" },
+            { value: "12→31%", label: "Taxa de ativação", sub: "cadastro → primeira ação" },
+            { value: "+3.2k", label: "Novos voluntários", sub: "ativos em 90 dias" },
+            { value: "–44%", label: "Tempo para match", sub: "de 8min para 4.5min" },
+          ]},
         ],
       },
       {
