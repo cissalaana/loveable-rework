@@ -245,9 +245,11 @@ const CaseStudyPage = () => {
                       {section.title && (
                         <h3 className="font-display text-[1.2rem] font-semibold text-foreground mb-3">{section.title}</h3>
                       )}
-                      <p className="font-body text-[0.95rem] leading-[1.85] font-light" style={{ color: "#5A4A44" }}>
-                        {section.text}
-                      </p>
+                      {section.text?.split("\n\n").map((paragraph, pIdx) => (
+                        <p key={pIdx} className="font-body text-[0.95rem] leading-[1.85] font-light mb-4 last:mb-0" style={{ color: "#5A4A44" }}>
+                          {paragraph}
+                        </p>
+                      ))}
                     </div>
                   );
                 }
